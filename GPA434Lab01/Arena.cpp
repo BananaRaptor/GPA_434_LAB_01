@@ -39,14 +39,14 @@ float Arena::largerSize()
 	return !(mWidth >= mHeigth) ? mHeigth : mWidth;
 }
 
-ezgame::Vect2d Arena::restrictedPosition(ezgame::Vect2d unmodifiedVect)
+ezgame::Vect2d Arena::restrictedPosition(ezgame::Vect2d position)
 {
-	return (unmodifiedVect.x() > 0 && unmodifiedVect.x() < mWidth && unmodifiedVect.y() > 0 && unmodifiedVect.y() < mHeigth) ? unmodifiedVect : restrictedVector(unmodifiedVect);
+	return (position.x() > 0 && position.x() < mWidth && position.y() > 0 && position.y() < mHeigth) ? position : restrictedVector(position);
 }
 
-ezgame::Vect2d Arena::warpedPosition(ezgame::Vect2d unmodifiedVect)
+ezgame::Vect2d Arena::warpedPosition(ezgame::Vect2d position)
 {
-	return (unmodifiedVect.x() > 0 && unmodifiedVect.x() < mWidth && unmodifiedVect.y() > 0 && unmodifiedVect.y() < mHeigth) ? unmodifiedVect : warpedVector(unmodifiedVect);
+	return (position.x() > 0 && position.x() < mWidth && position.y() > 0 && position.y() < mHeigth) ? position : warpedVector(position);
 }
 
 ezgame::Vect2d Arena::restrictedVector(ezgame::Vect2d unmodifiedVect)

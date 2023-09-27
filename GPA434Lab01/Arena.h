@@ -27,9 +27,9 @@ class Arena
 
 		float largerSize();
 
-		ezgame::Vect2d restrictedPosition(ezgame::Vect2d unmodifiedVect);
+		ezgame::Vect2d restrictedPosition(ezgame::Vect2d position);
 
-		ezgame::Vect2d warpedPosition(ezgame::Vect2d unmodifiedVect);
+		ezgame::Vect2d warpedPosition(ezgame::Vect2d position);
 
 };
 
