@@ -146,14 +146,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Arena.cpp" />
+    <ClCompile Include="Direction.cpp" />
+    <ClCompile Include="DirectionKeyMapping.cpp" />
     <ClCompile Include="Dome.cpp" />
     <ClCompile Include="DomeSupremacy.cpp" />
     <ClCompile Include="GameEngine.cpp" />
+    <ClCompile Include="StandardMapping.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arena.h" />
+    <ClInclude Include="Direction.h" />
+    <ClInclude Include="DirectionKeyMapping.h" />
     <ClInclude Include="Dome.h" />
     <ClInclude Include="GameEngine.h" />
+    <ClInclude Include="StandardMapping.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
