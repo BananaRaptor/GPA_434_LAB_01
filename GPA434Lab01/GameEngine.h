@@ -1,6 +1,7 @@
 #pragma once
 #include <EzGame>
 #include "Arena.h"
+#include "Dome.h"
 
 class GameEngine
 {
@@ -14,25 +15,25 @@ class GameEngine
 
         bool provessEvents(ezgame::Keyboard const& keyboard, ezgame::Timer const& timer) {
             if (keyboard.isKeyPressed(ezgame::Keyboard::Key::Space)) {
-                mCircle.move(ezgame::Vect2d::fromRandomized() * 2.5f);
+                mCircle.move(ezgame::Vect2d::fromRandomized() * 0.5f);
             }
             if (keyboard.isKeyPressed(ezgame::Keyboard::Key::Left)) {
-                mCircle.move(ezgame::Vect2d::Vect2d(-1,0) * 2.5f);
+                mCircle.move(ezgame::Vect2d::Vect2d(-1,0) * 0.5f);
             }
             if (keyboard.isKeyPressed(ezgame::Keyboard::Key::Right)) {
-                mCircle.move(ezgame::Vect2d::Vect2d(1, 0) * 2.5f);
+                mCircle.move(ezgame::Vect2d::Vect2d(1, 0) * 0.5f);
             }
-            if (keyboard.isKeyPressed(ezgame::Keyboard::Key::Up) {
-                mCircle.move(ezgame::Vect2d::Vect2d(0, 1) * 2.5f);
+            if (keyboard.isKeyPressed(ezgame::Keyboard::Key::Up)) {
+                mCircle.move(ezgame::Vect2d::Vect2d(0, -1) * 0.5f);
             }
-            if (keyboard.isKeyPressed(ezgame::Keyboard::Key::Right)) {
-                mCircle.move(ezgame::Vect2d::Vect2d(1, 0) * 2.5f);
+            if (keyboard.isKeyPressed(ezgame::Keyboard::Key::Down)) {
+                mCircle.move(ezgame::Vect2d::Vect2d(0, 1) * 0.5f);
             }
             return !keyboard.isKeyPressed(ezgame::Keyboard::Key::Escape);
         }
         void processDisplay(ezgame::Screen& screen) {
             screen.clear();
-            screen.draw(mText);
+            dome.draw(screen);
             screen.draw(mCircle);
         }
 
@@ -40,6 +41,7 @@ class GameEngine
         ezgame::Text mText;
         ezgame::Circle mCircle;
         Arena gameArena = Arena(width(),height());
+        Dome dome = Dome(gameArena);
 
         
 

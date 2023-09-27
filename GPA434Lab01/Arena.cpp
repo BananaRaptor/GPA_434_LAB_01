@@ -33,6 +33,7 @@ float Arena::smallerSize()
 	return !(mWidth <= mHeigth) ? mHeigth : mWidth;
 }
 
+
 float Arena::largerSize()
 {
 	return !(mWidth >= mHeigth) ? mHeigth : mWidth;
@@ -62,6 +63,7 @@ ezgame::Vect2d Arena::restrictedVector(ezgame::Vect2d unmodifiedVect)
 	if (unmodifiedVect.y() > mHeigth) {
 		return ezgame::Vect2d(unmodifiedVect.x(), mHeigth);
 	}
+	return unmodifiedVect;
 }
 
 ezgame::Vect2d Arena::warpedVector(ezgame::Vect2d unmodifiedVect)
@@ -78,4 +80,5 @@ ezgame::Vect2d Arena::warpedVector(ezgame::Vect2d unmodifiedVect)
 	if (unmodifiedVect.y() > mHeigth) {
 		return ezgame::Vect2d(unmodifiedVect.x(), 0);
 	}
+	return unmodifiedVect;
 }
