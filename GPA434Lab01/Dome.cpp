@@ -6,6 +6,7 @@ Dome::Dome(Arena& arena)
 	float radius = (arena.getWidth() > arena.getHeigth()) ? arena.getHeigth() / 4 : arena.getWidth() / 4;
 	 mShape = ezgame::Circle(radius, ezgame::Vect2d(arena.getWidth() / 2, arena.getHeigth() / 2), ezgame::Color(ezgame::Color::Yellow));
 	 mShape.setEdge(mEdgeSize);
+	 mShape.setEdge(ezgame::Color(ezgame::Color::Red));
 }
 
 float Dome::radius()

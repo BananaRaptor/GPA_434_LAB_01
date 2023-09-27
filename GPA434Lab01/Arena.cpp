@@ -39,17 +39,26 @@ float Arena::largerSize()
 	return !(mWidth >= mHeigth) ? mHeigth : mWidth;
 }
 
-ezgame::Vect2d Arena::restrictedPosition(ezgame::Vect2d position)
+ezgame::Vect2d Arena::restrictedPosition(const ezgame::Vect2d & position) const
 {
 	return (position.x() > 0 && position.x() < mWidth && position.y() > 0 && position.y() < mHeigth) ? position : restrictedVector(position);
 }
 
-ezgame::Vect2d Arena::warpedPosition(ezgame::Vect2d position)
+ezgame::Vect2d Arena::warpedPosition(const ezgame::Vect2d & position) const
 {
 	return (position.x() > 0 && position.x() < mWidth && position.y() > 0 && position.y() < mHeigth) ? position : warpedVector(position);
 }
 
-ezgame::Vect2d Arena::restrictedVector(ezgame::Vect2d unmodifiedVect)
+void Arena::tic(float elapsedTime)
+{
+}
+
+void Arena::draw(ezgame::Screen& screen)
+{
+	screen.clear();
+}
+
+ezgame::Vect2d Arena::restrictedVector(const ezgame::Vect2d unmodifiedVect) const
 {
 	if (unmodifiedVect.x() < 0) {
 		return ezgame::Vect2d(0, unmodifiedVect.y());
@@ -66,7 +75,7 @@ ezgame::Vect2d Arena::restrictedVector(ezgame::Vect2d unmodifiedVect)
 	return unmodifiedVect;
 }
 
-ezgame::Vect2d Arena::warpedVector(ezgame::Vect2d unmodifiedVect)
+ezgame::Vect2d Arena::warpedVector(const ezgame::Vect2d unmodifiedVect) const
 {
 	if (unmodifiedVect.x() < 0) {
 		return ezgame::Vect2d(mWidth, unmodifiedVect.y());

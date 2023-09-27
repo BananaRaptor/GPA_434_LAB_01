@@ -16,7 +16,7 @@ class DirectionKeyMapping
 
 		ezgame::Keyboard::Key keyMapping(Direction direction);
 
-		ezgame::Vect2d directionFromKeybord(ezgame::Keyboard& keyboard);
+		ezgame::Vect2d directionFromKeyboard(const ezgame::Keyboard& keyboard);
 
 		void setKeyMapping(Direction direction, ezgame::Keyboard::Key key);
 

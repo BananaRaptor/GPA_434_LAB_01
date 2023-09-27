@@ -2,6 +2,7 @@
 #include <EzGame>
 #include "Arena.h"
 #include "Dome.h"
+#include "Player.h"
 
 class GameEngine
 {
@@ -14,27 +15,13 @@ class GameEngine
         std::string iconFileName() const { return ""; }
 
         bool provessEvents(ezgame::Keyboard const& keyboard, ezgame::Timer const& timer) {
-            if (keyboard.isKeyPressed(ezgame::Keyboard::Key::Space)) {
-                mCircle.move(ezgame::Vect2d::fromRandomized() * 0.5f);
-            }
-            if (keyboard.isKeyPressed(ezgame::Keyboard::Key::Left)) {
-                mCircle.move(ezgame::Vect2d::Vect2d(-1,0) * 0.5f);
-            }
-            if (keyboard.isKeyPressed(ezgame::Keyboard::Key::Right)) {
-                mCircle.move(ezgame::Vect2d::Vect2d(1, 0) * 0.5f);
-            }
-            if (keyboard.isKeyPressed(ezgame::Keyboard::Key::Up)) {
-                mCircle.move(ezgame::Vect2d::Vect2d(0, -1) * 0.5f);
-            }
-            if (keyboard.isKeyPressed(ezgame::Keyboard::Key::Down)) {
-                mCircle.move(ezgame::Vect2d::Vect2d(0, 1) * 0.5f);
-            }
+            player1.tic(keyboard, timer.secondSinceLastTic(), gameArena);
             return !keyboard.isKeyPressed(ezgame::Keyboard::Key::Escape);
         }
         void processDisplay(ezgame::Screen& screen) {
-            screen.clear();
+            gameArena.draw(screen);
             dome.draw(screen);
-            screen.draw(mCircle);
+            player1.draw(screen);
         }
 
     private:
@@ -42,7 +29,7 @@ class GameEngine
         ezgame::Circle mCircle;
         Arena gameArena = Arena(width(),height());
         Dome dome = Dome(gameArena);
-
-        
+        Player player1 = Player(Role::Defender, std::string("Player 1"), ezgame::Color(ezgame::Color::Aqua), DirectionKeyMapping(StandardMapping::WASD));
+   
 
 };

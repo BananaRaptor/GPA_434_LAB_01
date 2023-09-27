@@ -8,8 +8,8 @@ class Arena
 		const float mMaximumSize = 2000;
 		float mWidth = 0 ;
 		float mHeigth = 0;
-		ezgame::Vect2d restrictedVector(ezgame::Vect2d unmodifiedVect);
-		ezgame::Vect2d warpedVector(ezgame::Vect2d unmodifiedVect);
+		ezgame::Vect2d restrictedVector(const ezgame::Vect2d unmodifiedVect) const;
+		ezgame::Vect2d warpedVector(const ezgame::Vect2d unmodifiedVect) const;
 
 	public:
 
@@ -27,9 +27,13 @@ class Arena
 
 		float largerSize();
 
-		ezgame::Vect2d restrictedPosition(ezgame::Vect2d position);
+		ezgame::Vect2d restrictedPosition(const ezgame::Vect2d & position) const;
 
-		ezgame::Vect2d warpedPosition(ezgame::Vect2d position);
+		ezgame::Vect2d warpedPosition(const ezgame::Vect2d & position) const;
+
+		void tic(float elapsedTime);
+
+		void draw(ezgame::Screen& screen);
 
 };
 

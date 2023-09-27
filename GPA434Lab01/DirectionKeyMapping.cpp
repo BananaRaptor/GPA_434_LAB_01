@@ -22,7 +22,7 @@ ezgame::Keyboard::Key DirectionKeyMapping::keyMapping(Direction direction)
 	}
 }
 
-ezgame::Vect2d DirectionKeyMapping::directionFromKeybord(ezgame::Keyboard& keyboard)
+ezgame::Vect2d DirectionKeyMapping::directionFromKeyboard(const ezgame::Keyboard& keyboard)
 {
     if (keyboard.isKeyPressed(mLeftKeyMapping)) {
         return ezgame::Vect2d::Vect2d(-1, 0);
