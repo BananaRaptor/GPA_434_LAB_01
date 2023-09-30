@@ -12,7 +12,7 @@ class Dome
 	public:
 		Dome(Arena& arena);
 
-		float radius();
+		float radius() const;
 
 		ezgame::Vect2d position();
 

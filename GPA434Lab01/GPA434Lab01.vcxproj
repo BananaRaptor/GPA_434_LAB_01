@@ -151,10 +151,14 @@
     <ClCompile Include="DirectionKeyMapping.cpp" />
     <ClCompile Include="Dome.cpp" />
     <ClCompile Include="DomeSupremacy.cpp" />
+    <ClCompile Include="Effect.cpp" />
     <ClCompile Include="GameEngine.cpp" />
+    <ClCompile Include="Modifier.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Role.cpp" />
+    <ClCompile Include="ScoreManager.cpp" />
     <ClCompile Include="StandardMapping.cpp" />
+    <ClCompile Include="Type.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Arena.h" />
@@ -162,10 +166,14 @@
     <ClInclude Include="Direction.h" />
     <ClInclude Include="DirectionKeyMapping.h" />
     <ClInclude Include="Dome.h" />
+    <ClInclude Include="Effect.h" />
     <ClInclude Include="GameEngine.h" />
+    <ClInclude Include="Modifier.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Role.h" />
+    <ClInclude Include="ScoreManager.h" />
     <ClInclude Include="StandardMapping.h" />
+    <ClInclude Include="Type.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

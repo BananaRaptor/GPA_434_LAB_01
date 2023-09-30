@@ -22,19 +22,19 @@ float Arena::getHeigth()
 	return mHeigth;
 }
 
-ezgame::Vect2d Arena::getCenter()
+ezgame::Vect2d Arena::getCenter() const
 {
 
 	return ezgame::Vect2d(mWidth/2,mHeigth/2);
 }
 
-float Arena::smallerSize()
+float Arena::smallerSize() const
 {
 	return !(mWidth <= mHeigth) ? mHeigth : mWidth;
 }
 
 
-float Arena::largerSize()
+float Arena::largerSize() const
 {
 	return !(mWidth >= mHeigth) ? mHeigth : mWidth;
 }

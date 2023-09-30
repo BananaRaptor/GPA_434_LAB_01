@@ -9,7 +9,7 @@ Dome::Dome(Arena& arena)
 	 mShape.setEdge(ezgame::Color(ezgame::Color::Red));
 }
 
-float Dome::radius()
+float Dome::radius() const
 {
 	return mShape.radius();
 }

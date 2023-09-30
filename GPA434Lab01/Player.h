@@ -35,7 +35,7 @@ class Player
 			mPlayerShape(mDefautlPlayerRadius, ezgame::Vect2d(0, 0), color),
 			mBorderManagementShape(mDefaultBorderManagementRadius, ezgame::Vect2d(0, 0), ezgame::Color::White),
 			mDirectionKeyMapping(directionKeyMapping),
-			mBorderManagement(BorderManagement::Warping),
+			mBorderManagement(BorderManagement::Restrict),
 			mHitScore(0),
 			mTimeAsContender(0),
 			mTimeAsDefender(0),
@@ -70,7 +70,7 @@ class Player
 
 		void newMatch(bool hit, bool swap, Arena& arena, Dome& dome);
 
-		void addHit();
+		void addHit() ;
 
 		void removeHit();
 

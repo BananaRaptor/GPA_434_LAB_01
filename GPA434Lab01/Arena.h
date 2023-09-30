@@ -21,11 +21,11 @@ class Arena
 
 		float getHeigth();
 
-		ezgame::Vect2d getCenter();
+		ezgame::Vect2d getCenter() const;
 
-		float smallerSize();
+		float smallerSize() const;
 
-		float largerSize();
+		float largerSize() const;
 
 		ezgame::Vect2d restrictedPosition(const ezgame::Vect2d & position) const;
 

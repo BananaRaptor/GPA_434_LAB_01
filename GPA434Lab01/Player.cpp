@@ -69,12 +69,39 @@ void Player::tic(const ezgame::Keyboard& keyboard, const float elapsedTime, cons
 void Player::draw(ezgame::Screen& screen)
 {
 	screen.draw(mPlayerShape);
+	ezgame::Color newColor = (mBorderManagement == BorderManagement::Restrict) ? ezgame::Color::White : ezgame::Color::Black;
+	mBorderManagementShape.setColors(newColor, newColor);
 	screen.draw(mBorderManagementShape);
+}
+
+void Player::addHit()
+{
+	mHitScore++;
+}
+
+void Player::removeHit()
+{
+	mHitScore--;
+}
+
+void Player::adjustSize(float relativeSize)
+{
+	mPlayerShape.setRadius(mPlayerShape.radius() * relativeSize);
+}
+
+void Player::adjustSpeed(float relativeSpeed)
+{
+	mSpeed *= relativeSpeed;
+}
+
+void Player::setBorderManagement(BorderManagement borderManagement)
+{
+	mBorderManagement = borderManagement;
 }
 
 void Player::movePlayer(const ezgame::Keyboard& keyboard, const Arena& arena)
 {
-	mPlayerShape.move(mDirectionKeyMapping.directionFromKeyboard(keyboard) * mSpeed/60);
+	mPlayerShape.move(mDirectionKeyMapping.directionFromKeyboard(keyboard) * mSpeed);
 	ezgame::Vect2d unMovedPosition = mPlayerShape.position();
 	ezgame::Vect2d tempPosition = ezgame::Vect2d(0, 0);
 	switch (mBorderManagement)
