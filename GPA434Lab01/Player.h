@@ -22,7 +22,7 @@ class Player
 		BorderManagement mBorderManagement;
 		DirectionKeyMapping mDirectionKeyMapping;
 
-		void movePlayer(const ezgame::Keyboard& keyboard, const Arena& arena);
+		void movePlayer(const ezgame::Keyboard& keyboard, const Arena& arena, float elaspedTime);
 
 		void addTimeAsRole(float elapsedTime);
 
@@ -40,20 +40,21 @@ class Player
 			mTimeAsContender(0),
 			mTimeAsDefender(0),
 			mSpeed(mDefautlPlayerSpeed) {
-			mSpeed = 2;
 		};
 
-		Role role();
+		Role role() const;
 
-		std::string name();
+		std::string name() const;
+
+		ezgame::Color color() const;
 
 		float speed();
 
-		size_t hitScore();
+		size_t hitScore() const;
 
-		float timeAsDefender();
+		float timeAsDefender() const;
 
-		float timeAsContender();
+		float timeAsContender() const;
 
 		BorderManagement borderManagement();
 

@@ -17,9 +17,9 @@ class Arena
 
 		Arena();
 
-		float getWidth();
+		float getWidth() const;
 
-		float getHeigth();
+		float getHeigth() const;
 
 		ezgame::Vect2d getCenter() const;
 

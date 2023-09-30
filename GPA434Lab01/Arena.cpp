@@ -9,15 +9,15 @@ Arena::Arena(float width, float heigth)
 Arena::Arena()
 {
 	mWidth = mMinimumSize;
-	mHeigth = mMaximumSize;
+	mHeigth = mMinimumSize;
 }
 
-float Arena::getWidth()
+float Arena::getWidth() const
 {
 	return mWidth;
 }
 
-float Arena::getHeigth()
+float Arena::getHeigth() const
 {
 	return mHeigth;
 }

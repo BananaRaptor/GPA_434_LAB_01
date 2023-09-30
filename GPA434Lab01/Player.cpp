@@ -8,14 +8,19 @@ bool Player::isCollidingCircle(ezgame::Circle circle)
 	return distance < (circle.radius() + mPlayerShape.radius());
 }
 
-Role Player::role()
+Role Player::role() const
 {
 	return mRole;
 }
 
-std::string Player::name()
+std::string Player::name() const
 {
 	return mName;
+}
+
+ezgame::Color Player::color() const
+{
+	return mPlayerShape.fillColor();
 }
 
 float Player::speed()
@@ -23,17 +28,17 @@ float Player::speed()
 	return mSpeed;
 }
 
-size_t Player::hitScore()
+size_t Player::hitScore() const
 {
 	return mHitScore;
 }
 
-float Player::timeAsDefender()
+float Player::timeAsDefender() const
 {
 	return mTimeAsDefender;
 }
 
-float Player::timeAsContender()
+float Player::timeAsContender() const
 {
 	return mTimeAsContender;
 }
@@ -61,7 +66,7 @@ bool Player::isColliding(Dome& dome)
 void Player::tic(const ezgame::Keyboard& keyboard, const float elapsedTime, const Arena& arena)
 {
 	addTimeAsRole(elapsedTime);
-	movePlayer(keyboard, arena);
+	movePlayer(keyboard, arena, elapsedTime);
 	mBorderManagementShape.position().set(mPlayerShape.position().x(), mPlayerShape.position().y());
 	
 }
@@ -81,7 +86,9 @@ void Player::addHit()
 
 void Player::removeHit()
 {
-	mHitScore--;
+	if (mHitScore > 0) {
+		mHitScore--;
+	}
 }
 
 void Player::adjustSize(float relativeSize)
@@ -99,9 +106,9 @@ void Player::setBorderManagement(BorderManagement borderManagement)
 	mBorderManagement = borderManagement;
 }
 
-void Player::movePlayer(const ezgame::Keyboard& keyboard, const Arena& arena)
+void Player::movePlayer(const ezgame::Keyboard& keyboard, const Arena& arena , float elapsedTime)
 {
-	mPlayerShape.move(mDirectionKeyMapping.directionFromKeyboard(keyboard) * mSpeed);
+	mPlayerShape.move(mDirectionKeyMapping.directionFromKeyboard(keyboard) * mSpeed * elapsedTime);
 	ezgame::Vect2d unMovedPosition = mPlayerShape.position();
 	ezgame::Vect2d tempPosition = ezgame::Vect2d(0, 0);
 	switch (mBorderManagement)
