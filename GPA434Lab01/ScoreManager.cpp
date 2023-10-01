@@ -22,8 +22,8 @@ void ScoreManager::tic(const Player& player0, const Player& player1)
 	mPlayer0Hit.setText(std::to_string(player0.hitScore()));
 	mPlayer1Hit.setText(std::to_string(player1.hitScore()));
 	
-	mPlayer0Time.setText(std::to_string(player0.timeAsDefender()));
-	mPlayer1Time.setText(std::to_string(player1.timeAsDefender()));
+	mPlayer0Time.setText(std::to_string(player0.timeAsDefender()).substr(0,4));
+	mPlayer1Time.setText(std::to_string(player1.timeAsDefender()).substr(0,4));
 }
 
 void ScoreManager::draw(ezgame::Screen& screen)

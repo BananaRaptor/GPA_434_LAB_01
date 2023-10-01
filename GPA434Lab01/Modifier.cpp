@@ -24,7 +24,7 @@ void Modifier::setPositionOfElements(const Arena& arena, const Dome& dome)
 	float angle = 2 * M_PI * (ezgame::Random::real(0.0, 360.0) / 360);
 	ezgame::Vect2d center = arena.getCenter();
 	float x = std::cos(angle) * radius + center.x();
-	float y = std::sin(angle) * radius + center.y();;
+	float y = std::sin(angle) * radius + center.y();
 	ezgame::Vect2d newPosition = ezgame::Vect2d(x, y);
 	ezgame::Vect2d newPositionText = ezgame::Vect2d(x, y - 2 * mShape.radius());
 	ezgame::Vect2d newPositionSecondary = ezgame::Vect2d(x, y + mShape.radius() + mTypeShape.radius());

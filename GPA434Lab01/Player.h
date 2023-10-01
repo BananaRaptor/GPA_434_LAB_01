@@ -1,9 +1,11 @@
 #pragma once
+#define _USE_MATH_DEFINES
 #include <EzGame>
 #include "Role.h"
 #include "BorderManagement.h"
 #include "DirectionKeyMapping.h"
 #include "Dome.h"
+#include <math.h>
 
 class Player
 {
@@ -27,6 +29,12 @@ class Player
 		void addTimeAsRole(float elapsedTime);
 
 		bool isCollidingCircle(ezgame::Circle circle);
+
+		void swapRole();
+
+		void positionPlayer(Arena& arena, Dome& dome);
+
+		void positionContender(Arena& arena, Dome& dome);
 
 	public:
 		Player(Role role, const std::string&  name, const ezgame::Color&  color, const DirectionKeyMapping& directionKeyMapping) :

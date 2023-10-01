@@ -79,6 +79,58 @@ void Player::draw(ezgame::Screen& screen)
 	screen.draw(mBorderManagementShape);
 }
 
+void Player::newMatch(bool hit, bool swap, Arena& arena, Dome& dome)
+{
+	if(hit)
+	{
+		mHitScore++;
+	}
+	if (swap)
+	{
+		swapRole();
+	}
+	positionPlayer(arena, dome);
+}
+
+void Player::swapRole()
+{
+	switch (mRole)
+	{
+	case Role::Defender:
+		mRole = Role::Contender;
+		break;
+	case Role::Contender:
+		mRole = Role::Defender;
+		break;
+	default:
+		break;
+	};
+}
+
+void Player::positionPlayer(Arena& arena, Dome& dome)
+{
+	switch (mRole)
+	{
+	case Role::Defender:
+		mPlayerShape.setPosition(arena.getCenter());
+		break;
+	case Role::Contender:
+		positionContender(arena, dome);
+		break;
+	default:
+		break;
+	};
+}
+
+void Player::positionContender(Arena& arena, Dome& dome)
+{
+	float angle = 2 * M_PI * (ezgame::Random::real(0.0, 360.0) / 360);
+	ezgame::Vect2d center = arena.getCenter();
+	float x = std::cos(angle) * arena.smallerSize()/2 + center.x();
+	float y = std::sin(angle) * arena.smallerSize()/2 + center.y();
+	mPlayerShape.setPosition(ezgame::Vect2d(x, y));
+}
+
 void Player::addHit()
 {
 	mHitScore++;
