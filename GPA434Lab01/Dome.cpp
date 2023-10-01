@@ -31,8 +31,8 @@ ezgame::Color Dome::color()
 
 void Dome::setColor(ezgame::Color& color)
 {
-	ezgame::Color lighterColor = ezgame::Color(color.red() * mEdgeColorLighterRatio, color.green() * mEdgeColorLighterRatio, color.red() * mEdgeColorLighterRatio);
-	mShape.setColors(color, lighterColor);
+	ezgame::Color lighterColor = ezgame::Color(color.red() , color.green() , color.blue(), mEdgeColorLighterRatio );
+	mShape.setColors(lighterColor, color);
 	return;
 }
 

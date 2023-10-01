@@ -7,6 +7,13 @@ bool GameEngine::provessEvents(ezgame::Keyboard const& keyboard, ezgame::Timer c
     player1.tic(keyboard, timer.secondSinceLastTic(), gameArena);
     modifier.tic(player0, player1, gameArena, dome);
     scoreManager.tic(player0, player1);
+    if(player0.role() == Role::Defender) {
+        ezgame::Color  tempColor = player0.color();
+        dome.setColor(tempColor);
+    }else {
+        ezgame::Color  tempColor = player1.color();
+        dome.setColor(tempColor);
+    }
 
     handleDefenderWin();
     handleContenderWin();
