@@ -10,14 +10,14 @@ Effect Modifier::effect()
 	return mEffect;
 }
 
-void Modifier::randomize(const Arena& arena, const Dome& dome)
+void Modifier::randomize(const Arena &arena, const Dome &dome)
 {
 	setType();
 	setEffect();
 	setPositionOfElements(arena, dome);
 }
 
-void Modifier::setPositionOfElements(const Arena& arena, const Dome& dome)
+void Modifier::setPositionOfElements(const Arena &arena, const Dome &dome)
 {
 	int circleWidth = arena.smallerSize() / 2 - dome.radius();
 	float radius = dome.radius() + ezgame::Random::real(0.0, 1.0) * circleWidth;
@@ -34,10 +34,11 @@ void Modifier::setPositionOfElements(const Arena& arena, const Dome& dome)
 	mTypeShape.setPosition(newPositionSecondary);
 }
 
-void Modifier::tic(Player& player0, Player& player1, const Arena& arena, const Dome& dome)
+void Modifier::tic(Player &player0, Player &player1, const Arena &arena, const Dome &dome)
 {
-	if(player0.isColliding(mShape) && player1.isColliding(mShape)) {
-		randomize(arena,dome);
+	if (player0.isColliding(mShape) && player1.isColliding(mShape))
+	{
+		randomize(arena, dome);
 		return;
 	}
 	if (player0.isColliding(mShape))
@@ -55,67 +56,67 @@ void Modifier::tic(Player& player0, Player& player1, const Arena& arena, const D
 	return;
 }
 
-void Modifier::draw(ezgame::Screen& screen)
+void Modifier::draw(ezgame::Screen &screen)
 {
 	screen.draw(mShape);
 	screen.draw(mTypeShape);
 	screen.draw(mText);
 }
 
-void Modifier::applyBonus(Player& player)
+void Modifier::applyBonus(Player &player)
 {
 	switch (mEffect)
 	{
-		case Effect::Speed:
-			player.adjustSpeed(mPlayerSpeedIncrease);
-			break;
-		case Effect::Size:
-			player.adjustSize(mPlayerSizeIncrease);
-			break;
-		case Effect::Warping:
-			player.setBorderManagement(BorderManagement::Warping);
-			break;
-		case Effect::Hit:
-			player.addHit();
-			break;
-		default:
-			break;
+	case Effect::Speed:
+		player.adjustSpeed(mPlayerSpeedIncrease);
+		break;
+	case Effect::Size:
+		player.adjustSize(mPlayerSizeIncrease);
+		break;
+	case Effect::Warping:
+		player.setBorderManagement(BorderManagement::Warping);
+		break;
+	case Effect::Hit:
+		player.addHit();
+		break;
+	default:
+		break;
 	}
 }
 
-void Modifier::applyMalus(Player& player)
+void Modifier::applyMalus(Player &player)
 {
 	switch (mEffect)
 	{
-		case Effect::Speed:
-			player.adjustSpeed(mPlayerSpeedDecrease);
-			break;
-		case Effect::Size:
-			player.adjustSize(mPlayerSizeDecrease);
-			break;
-		case Effect::Warping:
-			player.setBorderManagement(BorderManagement::Restrict);
-			break;
-		case Effect::Hit:
-			player.removeHit();
-			break;
-		default:
-			break;
-		}
+	case Effect::Speed:
+		player.adjustSpeed(mPlayerSpeedDecrease);
+		break;
+	case Effect::Size:
+		player.adjustSize(mPlayerSizeDecrease);
+		break;
+	case Effect::Warping:
+		player.setBorderManagement(BorderManagement::Restrict);
+		break;
+	case Effect::Hit:
+		player.removeHit();
+		break;
+	default:
+		break;
+	}
 }
 
-void Modifier::applyEffect(Player& player)
+void Modifier::applyEffect(Player &player)
 {
 	switch (mType)
 	{
-		case Type::Bonus:
-			applyBonus(player);
-			break;
-		case Type::Malus:
-			applyMalus(player);
-			break;
-		default:
-			break;
+	case Type::Bonus:
+		applyBonus(player);
+		break;
+	case Type::Malus:
+		applyMalus(player);
+		break;
+	default:
+		break;
 	}
 }
 
@@ -124,21 +125,21 @@ void Modifier::setEffect()
 	mEffect = ezgame::Random::enumerator<Effect>(4);
 	switch (mEffect)
 	{
-		case Effect::Speed:
-			mText = ezgame::Text(mTextEffectSpeed, mDefaultTextSize, ezgame::Vect2d(0, 0), mDefaultShapeColor);
-			break;
-		case Effect::Size:
-			mText = ezgame::Text(mTextEffectSize, mDefaultTextSize, ezgame::Vect2d(0, 0), mDefaultShapeColor);
-			break;
-		case Effect::Warping:
-			mText = ezgame::Text(mTextEffectWarping, mDefaultTextSize, ezgame::Vect2d(0, 0), mDefaultShapeColor);
-			break;
-		case Effect::Hit:
-			mText = ezgame::Text(mTextEffectHit, mDefaultTextSize, ezgame::Vect2d(0, 0), mDefaultShapeColor);
-			break;
-		default:
-			mText = ezgame::Text("ERROR", mDefaultTextSize, ezgame::Vect2d(0, 0), mDefaultShapeColor);
-			break;
+	case Effect::Speed:
+		mText = ezgame::Text(mTextEffectSpeed, mDefaultTextSize, ezgame::Vect2d(0, 0), mDefaultShapeColor);
+		break;
+	case Effect::Size:
+		mText = ezgame::Text(mTextEffectSize, mDefaultTextSize, ezgame::Vect2d(0, 0), mDefaultShapeColor);
+		break;
+	case Effect::Warping:
+		mText = ezgame::Text(mTextEffectWarping, mDefaultTextSize, ezgame::Vect2d(0, 0), mDefaultShapeColor);
+		break;
+	case Effect::Hit:
+		mText = ezgame::Text(mTextEffectHit, mDefaultTextSize, ezgame::Vect2d(0, 0), mDefaultShapeColor);
+		break;
+	default:
+		mText = ezgame::Text("ERROR", mDefaultTextSize, ezgame::Vect2d(0, 0), mDefaultShapeColor);
+		break;
 	}
 }
 
