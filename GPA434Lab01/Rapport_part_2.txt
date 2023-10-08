@@ -1,0 +1,32 @@
+3. 
+    a) 175 float
+    b)  
+        i   - Composition lorsque le player meurt, l'objet DirectionKeyMapping meurt  
+        ii  - Composition lorsque le GameEngine meurt, Arena meurt
+        iii - Association, elles s'utilisent entre elles mais leur vie n'est pas liée
+        iv  - Composition lorsque le modificateur meurt l'objet text du modificateur meurt avec lui.
+        v   - Association 
+        vi  - Association
+    c) Les classes circles et text sont tous les deux des éléments graphique possédant un vect2d, des couleurs et des tailles en float.
+        On pourrait créer un classe intermédaire (GraphicalElement) qui aggérerait les données communes couleurs, taille et position ensemble.
+
+4. 
+    a. Ce mot clé empêche l'objet de modifier ses propritétées losrque cette fonction est appelé.
+        Pour les cas spécifique mentionnée dans ezgame::Keyboard::isKeyPressed il sert à s'assurer que l'objet
+        ne se modifie pas. Il sert a rien de changer l'objet lorsqu'on souhaite seulement avoir un retour booléen.
+
+        Tandis que ezgame::Screen::draw lui sert justement a modifier l'objet écran pour y modifier les éléments graphiques.
+        La fonctionnalité serait impossible à implémenter si ce mot clé était ajouté.
+    
+    b. Ce mots clé spécifie les accèes au propriétées et des fonctions de la classe.
+        De base ce dernier est privé si non spécifié ce qui signifie que seulement l'objet lui même peux acceder à l'element.
+        Si l'accès est publique, tous les autres objets et fonctions peuvent utiliser les différents éléments.
+
+    c. Le compilateur va lancer une erreur. Il s'agit d'une relique de la compilation de struct en C qui était défini comme un type de variable custom.
+        On peut voir la classe similairement comme une variable devant être instancié et non statique.
+
+    d.
+        i   - Retourne vrai si mX et mY sont défini et non-nul
+        ii  - Retourne racine carrée de (mX ^2 + mY ^2)
+        iii - Retourne un float réprésentant la diréction en radian atan(my/mx)
+        iV  - Prend un rayon et un angle et change la valeur de mX et mY

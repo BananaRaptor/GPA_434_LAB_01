@@ -1,20 +1,17 @@
-// En-tête à régiger :
+// En-tï¿½te ï¿½ rï¿½giger :
 //  - contenu de ce fichier
 //  - contexte
 //  - objectifs
-//  - réalisé par Abc Xyz
-//  - date de création
-
+//  - rï¿½alisï¿½ par Abc Xyz
+//  - date de crï¿½ation
 
 #include <EzGame>
 #include "GameEngine.h"
-
 
 int WinMain()
 {
     ezgame::Application application;
     application.run<GameEngine>();
-
 
     return 0;
 }

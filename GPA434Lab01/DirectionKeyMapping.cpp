@@ -7,7 +7,8 @@ DirectionKeyMapping::DirectionKeyMapping(StandardMapping standardMapping = Stand
 
 ezgame::Keyboard::Key DirectionKeyMapping::keyMapping(Direction direction)
 {
-	switch (direction) {
+	switch (direction)
+	{
 	case Direction::Up:
 		return mUpKeyMapping;
 
@@ -22,18 +23,22 @@ ezgame::Keyboard::Key DirectionKeyMapping::keyMapping(Direction direction)
 	}
 }
 
-ezgame::Vect2d DirectionKeyMapping::directionFromKeyboard(const ezgame::Keyboard& keyboard)
+ezgame::Vect2d DirectionKeyMapping::directionFromKeyboard(const ezgame::Keyboard &keyboard)
 {
-	if (keyboard.isKeyPressed(mLeftKeyMapping)) {
+	if (keyboard.isKeyPressed(mLeftKeyMapping))
+	{
 		return ezgame::Vect2d::Vect2d(-1, 0);
 	}
-	if (keyboard.isKeyPressed(mRightKeyMapping)) {
+	if (keyboard.isKeyPressed(mRightKeyMapping))
+	{
 		return ezgame::Vect2d::Vect2d(1, 0);
 	}
-	if (keyboard.isKeyPressed(mUpKeyMapping)) {
+	if (keyboard.isKeyPressed(mUpKeyMapping))
+	{
 		return ezgame::Vect2d::Vect2d(0, -1);
 	}
-	if (keyboard.isKeyPressed(mDowntKeyMapping)) {
+	if (keyboard.isKeyPressed(mDowntKeyMapping))
+	{
 		return ezgame::Vect2d::Vect2d(0, 1);
 	}
 	return ezgame::Vect2d::Vect2d(0, 0);
@@ -41,7 +46,8 @@ ezgame::Vect2d DirectionKeyMapping::directionFromKeyboard(const ezgame::Keyboard
 
 void DirectionKeyMapping::setKeyMapping(Direction direction, ezgame::Keyboard::Key key)
 {
-	switch (direction) {
+	switch (direction)
+	{
 	case Direction::Up:
 		mUpKeyMapping = key;
 		break;
@@ -70,8 +76,6 @@ void DirectionKeyMapping::setKeyMapping(ezgame::Keyboard::Key leftKey, ezgame::K
 	mUpKeyMapping = upKey;
 	mRightKeyMapping = rightKey;
 	mDowntKeyMapping = downKey;
-
-
 }
 
 void DirectionKeyMapping::setKeyMapping(StandardMapping standardMapping)
