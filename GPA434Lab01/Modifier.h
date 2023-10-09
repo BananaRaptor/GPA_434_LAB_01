@@ -49,8 +49,8 @@ class Modifier
 			randomize(arena, dome);
 		};
 		
-		Type type();
-		Effect effect();
+		Type type() const;
+		Effect effect() const;
 		void randomize(const Arena& arena, const Dome& dome);
 		void setPositionOfElements(const Arena& arena, const Dome& dome);
 		void tic(Player& player0, Player& player1, const Arena& arena, const Dome& dome);

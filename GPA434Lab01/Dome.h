@@ -14,11 +14,11 @@ class Dome
 
 		float radius() const;
 
-		ezgame::Vect2d position();
+		ezgame::Vect2d position() const;
 
-		ezgame::Circle circle();
+		ezgame::Circle circle() const;
 
-		ezgame::Color color();
+		ezgame::Color color() const;
 
 		void setColor(ezgame::Color& color);
 

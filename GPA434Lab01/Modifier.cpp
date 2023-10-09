@@ -1,11 +1,11 @@
 #include "Modifier.h"
 
-Type Modifier::type()
+Type Modifier::type() const
 {
 	return mType;
 }
 
-Effect Modifier::effect()
+Effect Modifier::effect() const
 {
 	return mEffect;
 }

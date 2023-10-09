@@ -1,7 +1,7 @@
 #include "Player.h"
 #include <cmath>
 
-bool Player::isCollidingCircle(ezgame::Circle circle)
+bool Player::isCollidingCircle(ezgame::Circle circle) const
 {
 	float distance = sqrt(pow(mPlayerShape.position().x() - circle.position().x(), 2) + pow(mPlayerShape.position().y() - circle.position().y(), 2));
 	return distance < (circle.radius() + mPlayerShape.radius());
@@ -22,7 +22,7 @@ ezgame::Color Player::color() const
 	return mPlayerShape.fillColor();
 }
 
-float Player::speed()
+float Player::speed() const
 {
 	return mSpeed;
 }
@@ -42,22 +42,22 @@ float Player::timeAsContender() const
 	return mTimeAsContender;
 }
 
-BorderManagement Player::borderManagement()
+BorderManagement Player::borderManagement() const
 {
 	return mBorderManagement;
 }
 
-bool Player::isColliding(ezgame::Circle &otherCircle)
+bool Player::isColliding(ezgame::Circle &otherCircle) const
 {
 	return isCollidingCircle(otherCircle);
 }
 
-bool Player::isColliding(Player &player)
+bool Player::isColliding(Player &player) const
 {
 	return isCollidingCircle(player.mPlayerShape);
 }
 
-bool Player::isColliding(Dome &dome)
+bool Player::isColliding(Dome &dome) const
 {
 	return isCollidingCircle(dome.circle());
 }

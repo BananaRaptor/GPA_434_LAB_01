@@ -13,17 +13,17 @@ float Dome::radius() const
 	return mShape.radius();
 }
 
-ezgame::Vect2d Dome::position()
+ezgame::Vect2d Dome::position() const
 {
 	return mShape.position();
 }
 
-ezgame::Circle Dome::circle()
+ezgame::Circle Dome::circle() const
 {
 	return mShape;
 }
 
-ezgame::Color Dome::color()
+ezgame::Color Dome::color() const
 {
 	return mShape.fillColor();
 }

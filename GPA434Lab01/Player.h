@@ -28,7 +28,7 @@ class Player
 
 		void addTimeAsRole(float elapsedTime);
 
-		bool isCollidingCircle(ezgame::Circle circle);
+		bool isCollidingCircle(ezgame::Circle circle) const;
 
 		void swapRole();
 
@@ -56,7 +56,7 @@ class Player
 
 		ezgame::Color color() const;
 
-		float speed();
+		float speed() const;
 
 		size_t hitScore() const;
 
@@ -64,13 +64,13 @@ class Player
 
 		float timeAsContender() const;
 
-		BorderManagement borderManagement();
+		BorderManagement borderManagement() const;
 
-		bool isColliding(ezgame::Circle& otherCircle);
+		bool isColliding(ezgame::Circle& otherCircle) const;
 
-		bool isColliding(Player& player);
+		bool isColliding(Player& player) const;
 
-		bool isColliding(Dome& dome);
+		bool isColliding(Dome& dome) const;
 
 		void tic(const ezgame::Keyboard& keyboard, const float elapsedTime, const Arena& arena);
 
@@ -80,7 +80,7 @@ class Player
 
 		void newGame(Role role, Arena arena, Dome dome);
 
-		void addHit() ;
+		void addHit();
 
 		void removeHit();
 
