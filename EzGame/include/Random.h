@@ -23,7 +23,7 @@ namespace ezgame {
     //! 
     //! \brief Classe statique générant des valeurs aléatoires de divers types.
     //!
-    //! Cette classe offre une collection de méthodes statiques permettant de  
+    //! Cette classe offre une collection de méthodes statiques permettant de 
     //! générer des valeurs aléatoires. Elle est conçue pour être purement 
     //! statique et ne peut donc pas être instanciée. 
     //! 
@@ -32,10 +32,12 @@ namespace ezgame {
     //!  - entier `int` (tous les entiers avec leurs variantes de taille et de 
     //!    signe)
     //!  - réel `float` (toutes les tailles de points flottant)
-    //!  - enumération `enum` (un enum personnalisé)
+    //!  - enumération `enum` (une énumération quelconque)
     //! 
-    //! Les valeurs générées le sont de façon pseudo aléatoire avec une 
+    //! Les valeurs générées le sont de façon pseudo-aléatoire avec une 
     //! distribution uniforme.
+    //! 
+    //! Cette classe est générique et n'est pas spécifiquement liée à `EzGame`.
     //! 
     class Random
     {
@@ -49,13 +51,16 @@ namespace ezgame {
         ~Random() = delete;
         //! endcond
 
+        //! 
+        //! 
         //! \brief Génère un booléen selon la probabilité donnée.
         //! 
-        //! \details La probabilité corresponda au pourcentage d'obtenir 
+        //! \details La probabilité correspond au pourcentage d'obtenir 
         //! la valeur vraie. Cette valeur est limitée dans l'intervalle [0, 1].
         //! 
         //! \param probability La probabilité pour laquelle l'évènement est 
         //! vrai. Correspond à un pourcentage déterminé dans l'intervalle [0, 1].
+        //! 
         //! \return Un booléen généré aléatoirement.
         //! 
         //! Exemple d'utilisation :
@@ -67,6 +72,7 @@ namespace ezgame {
         //!     bool mySecondEvent{ Random::event(0.75f) }; 
         //! \endcode
         static bool event(float probability = 0.5f);
+        //!
         //!
         //! \brief Génère un entier selon la plage totale existante pour 
         //! le type spécifié.
@@ -90,6 +96,7 @@ namespace ezgame {
         //! \endcode
         template <std::integral int_type> static int_type integer();
         //!
+        //!
         //! \brief Génère un entier selon la plage [0, maximum].
         //! 
         //! \details Cette fonction est un `template` déductible. Ainsi, 
@@ -110,6 +117,7 @@ namespace ezgame {
         //!     size_t value1{ Random::integer<size_t>(1000) }; 
         //! \endcode
         template <std::integral int_type> static int_type integer(int_type maximum);
+        //!
         //!
         //! \brief Génère un entier selon la plage [minimum, maximum].
         //! 
@@ -136,6 +144,7 @@ namespace ezgame {
         //! \endcode
         template <std::integral int_type> static int_type integer(int_type minimum, int_type maximum);
         //!
+        //!
         //! \brief Génère un réel selon la plage [0, 1].
         //! 
         //! \details Cette fonction est un `template` non déductible. Ainsi, 
@@ -153,6 +162,7 @@ namespace ezgame {
         //!     double value1{ Random::real<double>() }; 
         //! \endcode
         template <std::floating_point real_type> static real_type real();
+        //!
         //!
         //! \brief Génère un réel selon la plage [0, maximum].
         //! 
@@ -174,6 +184,7 @@ namespace ezgame {
         //!     double value1{ Random::real<double>(-10.0, 0.0) }; 
         //! \endcode
         template <std::floating_point real_type> static real_type real(real_type maximum);
+        //!
         //!
         //! \brief Génère un réel selon la plage [minimum, maximum].
         //! 
@@ -199,6 +210,7 @@ namespace ezgame {
         //!     double value1{ Random::real(-1000.0, -500.0) }; 
         //! \endcode
         template <std::floating_point real_type> static real_type real(real_type minimum, real_type maximum);
+        //!
         //!
         //! \brief Génère un énumérateur parmi ceux donnés.
         //! 
@@ -230,8 +242,9 @@ namespace ezgame {
         template <Enumeration enum_type, Enumeration... enum_types>
         static enum_type enumerator(enum_type firstEnumerator, enum_types... allOtherEnumerators);
         //!
-        //! \brief Génère un énumérateur entre le premier défini et _compte_ 
-        //! donné.
+        //!
+        //! \brief Génère un énumérateur entre le premier défini et le 
+        //! _compte_-ième donné.
         //! 
         //! \details Cette fonction est un `template` non déductible. Ainsi, 
         //! est est obligatoire de fournir le type énuméré souhaité. 
@@ -258,6 +271,7 @@ namespace ezgame {
         template <Enumeration enum_type>
         static enum_type enumerator(size_t enumeratorCount);
         //!
+        //!
         //! \brief Génère un énumérateur.
         //! 
         //! \details Cette fonction est un `template` déductible. Ainsi, 
@@ -270,8 +284,7 @@ namespace ezgame {
         //! \param lastIsCountEnumerator Détermine sur le dernier 
         //! énumérateur n'est qu'un énumérateur technique de compte 
         //! (généralement appelé `_count_` ou similairement).
-        //! \return L'énumérateur généré aléatoirement parmi tous ceux passés 
-        //! en argument.
+        //! \return L'énumérateur généré aléatoirement parmi ceux précisés.
         //! 
         //! Exemple d'utilisation :
         //! \code 
@@ -279,9 +292,10 @@ namespace ezgame {
         //!     enum class SwitchState { Off, On };
         //!     SwitchState state{ Random::enumerator(SwitchState::On) };
         //! 
-        //!     // un AccessLevel aléatoire
+        //!     // deux AccessLevel aléatoires
         //!     enum class AccessLevel { Admin, User, Guest, __count__ };
-        //!     AccessLevel level{ Random::enumerator(AccessLevel::__count__, true) };
+        //!     AccessLevel level0{ Random::enumerator(AccessLevel::Guest, false) };
+        //!     AccessLevel level1{ Random::enumerator(AccessLevel::__count__, true) };
         //! \endcode
         template <Enumeration enum_type>
         static enum_type enumerator(enum_type lastEnumerator, bool lastIsCountEnumerator = false);
@@ -300,7 +314,7 @@ namespace ezgame {
 
 
     
-
+    //! \cond PRIVATE
     template<std::integral int_type>
     inline int_type Random::integer() {
         return integer(std::numeric_limits<int_type>::min(), std::numeric_limits<int_type>::max());
@@ -349,6 +363,7 @@ namespace ezgame {
     inline enum_type Random::enumerator(enum_type lastEnumerator, bool lastIsCountEnumerator) {
         return enumerator<enum_type>(static_cast<size_t>(lastEnumerator) + (lastIsCountEnumerator ? 1 : 0));
     }
+    //! \endcond
 
 } // namespace ezgame
 

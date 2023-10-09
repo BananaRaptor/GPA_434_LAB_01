@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['width_0',['width',['../classezgame_1_1_application.html#a434d430585dd9fe398567d8e69e1174a',1,'ezgame::Application::width()'],['../classezgame_1_1_screen.html#ae3f3c022151da2c654126a57f1b81b86',1,'ezgame::Screen::width()']]]
+  ['orientation_0',['orientation',['../classezgame_1_1_vect2d.html#ade6d6e956f0b92f1ac4c4316ce4ab1ca',1,'ezgame::Vect2d']]]
 ];

@@ -19,39 +19,81 @@ namespace ezgame {
     //! 
     //! \brief Classe permettant de dessiner à l'écran.
     //! 
-    //! \detail La classe Screen permet de dessiner sur la surface graphique 
+    //! \details La classe Screen permet de dessiner sur la surface graphique 
     //! les primitives disponibles avec la librairie `EzGame`.
     //! 
     //! Il est possible de :
-    //!  - connaître la taille de la surface graphique (voir Screen::width et Screen::height)
-    //!  - remplir la surface graphique d'une couleur uniforme (voir Screen::clear)
-    //!  - dessiner un objet Circle ou Text (voir Screen::draw)
-    //! 
+    //!  - connaître la taille de la surface graphique :
+    //!    - Screen::width
+    //!    - Screen::height
+    //!  - remplir la surface graphique d'une couleur uniforme :
+    //!    - Screen::clear
+    //!  - dessiner un objet Circle ou Text :
+    //!    - Screen::draw
     class Screen
     {
     public:
         // Accesseurs
         //!
-        //! \brief Retourne la largeur de la surface graphique.
+        //!
+        //! \brief Accesseur retournant la largeur de la surface graphique.
+        //! 
+        //! \return La largeur de la surface graphique.
         size_t width() const;
         //!
-        //! \brief Retourne la hauteur de la surface graphique.
+        //!
+        //! \brief Accesseur retournant la hauteur de la surface graphique.
+        //! 
+        //! \return La hauteur de la surface graphique.
         size_t height() const;
 
         // Mutateurs
         //!
-        //! \brief Rempli l'écran de la couleur noire. La couleur étant 
-        //! opaque, efface tout les éléments présents.
+        //!
+        //! \brief Rempli l'écran de la couleur noire. 
+        //! 
+        //! \details La couleur étant opaque, cette fonction a pour effet 
+        //! d'effacer tous les éléments présents.
         void clear();
         //!
-        //! \brief Rempli l'écran de la couleur donnée. La transparence 
-        //! de la couleur est utilisée.
+        //!
+        //! \brief Rempli l'écran de la couleur donnée. 
+        //! 
+        //! \details Puisque la transparence de la couleur est utilisée :
+        //! - une couleur opaque a pour effet d'effacer tout ce qui se trouve 
+        //!   sur la surface graphique
+        //! - une couleur semi transparente permet un effet intéressant
         void clear(Color const& color);
         //!
+        //!
         //! \brief Dessine le cercle donné.
+        //! 
+        //! \details Le cercle est dessiné en considérant :
+        //! - taille et positionnement selon :
+        //!   - le rayon
+        //!   - la position
+        //!   - l'alignement
+        //! - l'apparence selon :
+        //!   - la couleur de remplissage
+        //!   - la couleur et l'épaisseur du contour 
+        //! 
+        //! Voir la classe Circle pour plus de détails.
         void draw(Circle const& circle);
         //!
+        //!
         //! \brief Dessine le texte donné.
+        //! 
+        //! \details Le texte est dessiné en considérant :
+        //! - taille et positionnement selon :
+        //!   - la taille de la police de caractère
+        //!   - le texte lui-même
+        //!   - la position
+        //!   - l'alignement
+        //! - l'apparence selon :
+        //!   - la couleur de remplissage
+        //!   - la couleur et l'épaisseur du contour 
+        //! 
+        //! Voir la classe Text pour plus de détails.
         void draw(Text const& text);
 
     private:

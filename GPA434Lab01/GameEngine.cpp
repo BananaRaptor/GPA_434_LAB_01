@@ -1,54 +1,46 @@
 #include "GameEngine.h"
 #include <EzGame>
 
-bool GameEngine::provessEvents(ezgame::Keyboard const &keyboard, ezgame::Timer const &timer)
+bool GameEngine::processEvents(ezgame::Keyboard const &keyboard, ezgame::Timer const &timer)
 {
     player0.tic(keyboard, timer.secondSinceLastTic(), gameArena);
     player1.tic(keyboard, timer.secondSinceLastTic(), gameArena);
     modifier.tic(player0, player1, gameArena, dome);
     scoreManager.tic(player0, player1);
-    if (player0.role() == Role::Defender)
-    {
-        ezgame::Color tempColor = player0.color();
-        dome.setColor(tempColor);
-    }
-    else
-    {
-        ezgame::Color tempColor = player1.color();
-        dome.setColor(tempColor);
-    }
 
-    handleDefenderWin();
-    handleContenderWin();
+    manageEndMatch();
+    manageEndGame(keyboard);
+    return isAppStillRunning(keyboard);
+}
+
+void GameEngine::manageEndMatch()
+{
+    (player0.role() == Role::Defender) ? manageEndMatch(player0, player1) : manageEndMatch(player1, player0);
+}
+
+void GameEngine::manageEndMatch(Player& defender, Player& pretender)
+{
+    handleDefenderWin(defender, pretender);
+    handleContenderWin(defender, pretender);
+}
+
+void GameEngine::manageEndGame(ezgame::Keyboard const& keyboard)
+{
     if (keyboard.isKeyPressed(ezgame::Keyboard::Key::Enter))
     {
         resetGame();
     }
+}
+
+void GameEngine::setDomeColorFromPlayer(Player& defender)
+{
+    ezgame::Color tempColor = defender.color();
+    dome.setColor(tempColor);
+}
+
+bool GameEngine::isAppStillRunning(ezgame::Keyboard const& keyboard)
+{
     return !keyboard.isKeyPressed(ezgame::Keyboard::Key::Escape);
-}
-
-void GameEngine::resetGame()
-{
-    player0.~Player();
-    player1.~Player();
-    modifier.~Modifier();
-    new (&player0) Player(Role::Defender, std::string("Player 0"), ezgame::Color(ezgame::Color::Red), DirectionKeyMapping(StandardMapping::WASD));
-    new (&player1) Player(Role::Contender, std::string("Player 1"), ezgame::Color(ezgame::Color::Blue), DirectionKeyMapping(StandardMapping::Arrows));
-    new (&modifier) Modifier(gameArena, dome);
-}
-
-void GameEngine::handleContenderWin()
-{
-    if (player0.isColliding(dome) && player0.role() == Role::Contender)
-    {
-        player0.newMatch(true, true, gameArena, dome);
-        player1.newMatch(false, true, gameArena, dome);
-    }
-    if (player1.isColliding(dome) && player1.role() == Role::Contender)
-    {
-        player0.newMatch(false, true, gameArena, dome);
-        player1.newMatch(true, true, gameArena, dome);
-    }
 }
 
 void GameEngine::processDisplay(ezgame::Screen &screen)
@@ -61,19 +53,36 @@ void GameEngine::processDisplay(ezgame::Screen &screen)
     scoreManager.draw(screen);
 }
 
-void GameEngine::handleDefenderWin()
+
+void GameEngine::resetGame()
 {
-    if (player0.isColliding(player1))
+    (player0.role() == Role::Defender) ? resetGame(player0, player1) : resetGame(player1, player0);
+}
+
+void GameEngine::resetGame(Player& defender, Player& pretender)
+{
+    pretender.newGame(Role::Contender, gameArena, dome);
+    defender.newGame(Role::Defender, gameArena, dome);
+    setDomeColorFromPlayer(defender);
+    modifier.~Modifier();
+    new (&modifier) Modifier(gameArena, dome);
+}
+
+void GameEngine::handleDefenderWin(Player& defender, Player& pretender)
+{
+    if (defender.isColliding(pretender))
     {
-        if (player0.role() == Role::Defender)
-        {
-            player0.newMatch(true, false, gameArena, dome);
-            player1.newMatch(false, false, gameArena, dome);
-        }
-        else
-        {
-            player0.newMatch(false, false, gameArena, dome);
-            player1.newMatch(true, false, gameArena, dome);
-        }
+        defender.newMatch(true, false, gameArena, dome);
+        pretender.newMatch(false, false, gameArena, dome);
+    }
+}
+
+void GameEngine::handleContenderWin(Player& defender, Player& pretender)
+{
+    if (pretender.isColliding(dome))
+    {
+        pretender.newMatch(true, true, gameArena, dome);
+        defender.newMatch(false, true, gameArena, dome);
+        setDomeColorFromPlayer(pretender);
     }
 }

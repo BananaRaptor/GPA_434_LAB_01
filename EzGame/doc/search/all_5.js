@@ -16,6 +16,13 @@ var searchData=
   ['f7_13',['F7',['../classezgame_1_1_keyboard.html#aad095407733e3c5b856770504f988a85a47489eb597b7db34caa24b1fc78fc839',1,'ezgame::Keyboard']]],
   ['f8_14',['F8',['../classezgame_1_1_keyboard.html#aad095407733e3c5b856770504f988a85a4787509ad9f9d747a81a30e9dde3d4a7',1,'ezgame::Keyboard']]],
   ['f9_15',['F9',['../classezgame_1_1_keyboard.html#aad095407733e3c5b856770504f988a85a892a245e287c163080b23db737d3c4c9',1,'ezgame::Keyboard']]],
-  ['fpsestimation_16',['fpsEstimation',['../classezgame_1_1_timer.html#aca614c1536ccc8db0917e820e0e049bd',1,'ezgame::Timer']]],
-  ['fuchsia_17',['Fuchsia',['../classezgame_1_1_color.html#a2c6a70eb882a87b685f33f586168c5d2',1,'ezgame::Color']]]
+  ['fillcolor_16',['fillcolor',['../classezgame_1_1_circle.html#ac2e70c8e6303ae7824d32fc4c9616285',1,'ezgame::Circle::fillColor()'],['../classezgame_1_1_text.html#acde8fb63de8fe6fb173d3746c4fa2ad5',1,'ezgame::Text::fillColor()']]],
+  ['fpsestimation_17',['fpsEstimation',['../classezgame_1_1_timer.html#aca614c1536ccc8db0917e820e0e049bd',1,'ezgame::Timer']]],
+  ['fromhsl_18',['fromHsl',['../classezgame_1_1_color.html#a81c778b570aabf70440929ce9039615e',1,'ezgame::Color']]],
+  ['fromhsv_19',['fromHsv',['../classezgame_1_1_color.html#a130c96b42652af991a80eb1eb4f8aa24',1,'ezgame::Color']]],
+  ['fromnormalized_20',['fromNormalized',['../classezgame_1_1_vect2d.html#ae687ce48c96c7608747105b53eddcc32',1,'ezgame::Vect2d']]],
+  ['frompolar_21',['fromPolar',['../classezgame_1_1_vect2d.html#a79121ce5806b9feadc86facea1e561cd',1,'ezgame::Vect2d']]],
+  ['frompolarrandomized_22',['frompolarrandomized',['../classezgame_1_1_vect2d.html#a5424df94dd465952ed6c763287412122',1,'ezgame::Vect2d::fromPolarRandomized(float lengthMin, float lengthMax)'],['../classezgame_1_1_vect2d.html#a630d6598d98733fc5181c0a2327d63d6',1,'ezgame::Vect2d::fromPolarRandomized(float lengthMin, float lengthMax, float oriMin, float oriMax)']]],
+  ['fromrandomized_23',['fromrandomized',['../classezgame_1_1_vect2d.html#a43044bc065e1c230ae3b873e39a7ccd8',1,'ezgame::Vect2d::fromRandomized()'],['../classezgame_1_1_vect2d.html#a8a5ef1381e1171bd8f4c7773107cd565',1,'ezgame::Vect2d::fromRandomized(float xMin, float xMax, float yMin, float yMax)']]],
+  ['fuchsia_24',['Fuchsia',['../classezgame_1_1_color.html#a2c6a70eb882a87b685f33f586168c5d2',1,'ezgame::Color']]]
 ];

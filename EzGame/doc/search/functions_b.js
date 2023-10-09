@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['title_0',['title',['../classezgame_1_1_application.html#ae7c77461f3f3f36a54b25838fe0bbc8a',1,'ezgame::Application']]]
+  ['normalize_0',['normalize',['../classezgame_1_1_vect2d.html#a1282656324879bcb3c30fea6556e1fc5',1,'ezgame::Vect2d']]],
+  ['normalized_1',['normalized',['../classezgame_1_1_vect2d.html#ac71151bc84a003624ef637f7d08c574f',1,'ezgame::Vect2d']]]
 ];

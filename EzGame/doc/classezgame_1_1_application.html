@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="EzGameLogoMedium.png"/></td>
   <td id="projectalign">
    <div id="projectname">EzGame
    </div>
@@ -82,7 +90,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Constitue l'application elle-même et est au coeur de la bibliothèque <code>EzGame</code>.  
+<p>Constitue l'application elle-même.  
  <a href="classezgame_1_1_application.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_application_8h_source.html">Application.h</a>&gt;</code></p>
@@ -98,20 +106,20 @@ Fonctions membres publiques</h2></td></tr>
 <tr class="memdesc:a5d5daac6417206110429cebc6dbea825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructeur. <br /></td></tr>
 <tr class="separator:a5d5daac6417206110429cebc6dbea825"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a434d430585dd9fe398567d8e69e1174a" id="r_a434d430585dd9fe398567d8e69e1174a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_application.html#a434d430585dd9fe398567d8e69e1174a">width</a> () const</td></tr>
-<tr class="memdesc:a434d430585dd9fe398567d8e69e1174a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la largeur de la surface graphique.  <br /></td></tr>
+<tr class="memdesc:a434d430585dd9fe398567d8e69e1174a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur retournant la largeur de la surface graphique.  <br /></td></tr>
 <tr class="separator:a434d430585dd9fe398567d8e69e1174a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a711b04b518e27f97e20f6cd362288a68" id="r_a711b04b518e27f97e20f6cd362288a68"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_application.html#a711b04b518e27f97e20f6cd362288a68">height</a> () const</td></tr>
-<tr class="memdesc:a711b04b518e27f97e20f6cd362288a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la hauteur de la surface graphique.  <br /></td></tr>
+<tr class="memdesc:a711b04b518e27f97e20f6cd362288a68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur retournant la hauteur de la surface graphique.  <br /></td></tr>
 <tr class="separator:a711b04b518e27f97e20f6cd362288a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7c77461f3f3f36a54b25838fe0bbc8a" id="r_ae7c77461f3f3f36a54b25838fe0bbc8a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_application.html#ae7c77461f3f3f36a54b25838fe0bbc8a">title</a> () const</td></tr>
-<tr class="memdesc:ae7c77461f3f3f36a54b25838fe0bbc8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le titre de la fenêtre.  <br /></td></tr>
+<tr class="memdesc:ae7c77461f3f3f36a54b25838fe0bbc8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur retournant le titre de la fenêtre.  <br /></td></tr>
 <tr class="separator:ae7c77461f3f3f36a54b25838fe0bbc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05561789ec7bd2cb75ac7ab07c57da87" id="r_a05561789ec7bd2cb75ac7ab07c57da87"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_application.html#a05561789ec7bd2cb75ac7ab07c57da87">iconFileName</a> () const</td></tr>
-<tr class="memdesc:a05561789ec7bd2cb75ac7ab07c57da87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nom du fichier image utilisé pour l'icône de la fenêtre.  <br /></td></tr>
+<tr class="memdesc:a05561789ec7bd2cb75ac7ab07c57da87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur retournant le nom du fichier image utilisé pour l'icône de l'application.  <br /></td></tr>
 <tr class="separator:a05561789ec7bd2cb75ac7ab07c57da87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d3eff63e01513ea4b63924d9adb2eb6" id="r_a9d3eff63e01513ea4b63924d9adb2eb6"><td class="memTemplParams" colspan="2">template&lt;GameEngineRequirements GE&gt; </td></tr>
 <tr class="memitem:a9d3eff63e01513ea4b63924d9adb2eb6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6">run</a> ()</td></tr>
-<tr class="memdesc:a9d3eff63e01513ea4b63924d9adb2eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute l'application graphique en utilisant le moteur donné.  <br /></td></tr>
+<tr class="memdesc:a9d3eff63e01513ea4b63924d9adb2eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exécute l'application en utilisant le moteur donné en argument <code>template</code>.  <br /></td></tr>
 <tr class="separator:a9d3eff63e01513ea4b63924d9adb2eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -121,8 +129,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Screen</b></td></tr>
 <tr class="separator:a8d160591d071092304c2ed571901f8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Constitue l'application elle-même et est au coeur de la bibliothèque <code>EzGame</code>. </p>
-<p>La classe <a class="el" href="classezgame_1_1_application.html" title="Constitue l&#39;application elle-même et est au coeur de la bibliothèque EzGame.">Application</a> simplifie le développement en faisant la gestion :</p><ul>
+<div class="textblock"><p>Constitue l'application elle-même. </p>
+<p>La classe <a class="el" href="classezgame_1_1_application.html" title="Constitue l&#39;application elle-même.">Application</a> est au coeur de la bibliothèque <code>EzGame</code> et simplifie le développement en faisant la gestion :</p><ul>
 <li>des messages de <code>Windows</code></li>
 <li>de la fenêtre de l'application</li>
 <li>de l'affichage de la surface graphique</li>
@@ -130,14 +138,14 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Screen</b></td></tr>
 <li>du temps écoulé</li>
 <li>de la boucle principale en faisant les appels nécessaires</li>
 </ul>
-<p>La classe repose sur l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application graphique en utilisant le moteur donné.">Application::run</a>.</p>
-<p>La boucle principal du programme est basée sur deux fonctions qui sont appelées en boucle afin de rendre l'application interactive. Ces deux fonctions ont des rôles précis et sont appelé à chaque pas de simulation :</p><ol type="1">
+<p>La classe repose sur l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application en utilisant le moteur donné en argument template.">Application::run</a> qui implémente la boucle principale du programme. Cette boucle est basée sur deux fonctions appelées en boucle l'une après l'autre. Cette boucle permet de rendre l'application interactive. Ces fonctions ont des rôles précis et sont appelées à chaque pas de simulation :</p><ol type="1">
 <li>Application::processEvents : mettre à jour le modèle (considérant les entrées du clavier et le temps écoulé)</li>
 <li>Application::processDisplay : mettre à jour l'affichage</li>
 </ol>
-<p>Pour exécuter une application <code>EzGame</code> il suffit de créer un objet de la classe <a class="el" href="classezgame_1_1_application.html" title="Constitue l&#39;application elle-même et est au coeur de la bibliothèque EzGame.">Application</a> et d'appeler la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application graphique en utilisant le moteur donné.">Application::run</a> pour démarrer l'application graphique. Voici un exemple de code :</p>
+<p>Pour exécuter une application <code>EzGame</code> il suffit de créer un objet de la classe <a class="el" href="classezgame_1_1_application.html" title="Constitue l&#39;application elle-même.">Application</a> et d'appeler la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application en utilisant le moteur donné en argument template.">Application::run</a> afin de démarrer l'application graphique.</p>
+<p>Voici un exemple de code minimal où le moteur de jeu est donné :</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;EzGame&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;MyAwesomeGameEngine.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;MyAwesomeGameEngine.h&quot;</span> <span class="comment">// &lt;&lt;&lt; le moteur de jeu</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> WinMain()</div>
 <div class="line">{</div>
@@ -148,8 +156,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Screen</b></td></tr>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassezgame_1_1_application_html"><div class="ttname"><a href="classezgame_1_1_application.html">ezgame::Application</a></div><div class="ttdoc">Constitue l'application elle-même et est au coeur de la bibliothèque EzGame.</div><div class="ttdef"><b>Definition</b> Application.h:103</div></div>
-<div class="ttc" id="aclassezgame_1_1_application_html_a9d3eff63e01513ea4b63924d9adb2eb6"><div class="ttname"><a href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6">ezgame::Application::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Exécute l'application graphique en utilisant le moteur donné.</div></div>
+<div class="ttc" id="aclassezgame_1_1_application_html"><div class="ttname"><a href="classezgame_1_1_application.html">ezgame::Application</a></div><div class="ttdoc">Constitue l'application elle-même.</div><div class="ttdef"><b>Definition</b> Application.h:116</div></div>
+<div class="ttc" id="aclassezgame_1_1_application_html_a9d3eff63e01513ea4b63924d9adb2eb6"><div class="ttname"><a href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6">ezgame::Application::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Exécute l'application en utilisant le moteur donné en argument template.</div></div>
 </div><!-- fragment --><p>On remarque que le programme utilise la fonction <code>WinMain</code> plutôt que la fonction <code>main</code> comme point d'entrée du programme. </p>
 </div><h2 class="groupheader">Documentation des fonctions membres</h2>
 <a id="a711b04b518e27f97e20f6cd362288a68" name="a711b04b518e27f97e20f6cd362288a68"></a>
@@ -167,8 +175,10 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Screen</b></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retourne la hauteur de la surface graphique. </p>
-<p>La valeur retournée est définie seulement après l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application graphique en utilisant le moteur donné.">Application::run</a>. Sinon, la valeur est 0. La valeur déterminée par la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application graphique en utilisant le moteur donné.">Application::run</a> est bornée par l'interval [64, 2048].</p>
+<p>Accesseur retournant la hauteur de la surface graphique. </p>
+<p>La surface graphique est initialisée lors de l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application en utilisant le moteur donné en argument template.">Application::run</a>.</p>
+<p>Si cette fonction n'a pas été exécutée, la valeur est 0. D'ailleurs, la valeur 0 indique que l'application n'a pas été initialisée.</p>
+<p>À l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application en utilisant le moteur donné en argument template.">Application::run</a>, la valeur obtenue par le <code>GameEngine</code> est bornée dans l'intervalle [64, 2048].</p>
 <dl class="section return"><dt>Renvoie</dt><dd>La dimension verticale de la surface graphique. </dd></dl>
 
 </div>
@@ -188,11 +198,12 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Screen</b></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retourne le nom du fichier image utilisé pour l'icône de la fenêtre. </p>
-<p>La valeur retournée est définie seulement après l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application graphique en utilisant le moteur donné.">Application::run</a>. Sinon, la valeur est une chaîne de caractères vide.</p>
-<p>Le fichier doit être accessible par l'application lors de son exécution. Ainsi, le nom du fichier peut inclure un chemin d'accès relatif au dossier de travail de l'application ou un chemin d'accès absolue. Il est préférable d'utiliser un chemin d'accès relatif.</p>
-<p>Si une chaîne de caractères vide est retournée, l'icône par défaut de la librairie est utilisé (à condition que le fichier soit accessible). Si le fichier n'est pas accessible, l'icône par défaut de Windows est affichée.</p>
-<dl class="section return"><dt>Renvoie</dt><dd>Le nom du fichier de l'icône utilisée pour l'application. </dd></dl>
+<p>Accesseur retournant le nom du fichier image utilisé pour l'icône de l'application. </p>
+<p>L'application est initialisée lors de l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application en utilisant le moteur donné en argument template.">Application::run</a>.</p>
+<p>La chaîne de caractères peut inclure en préfixe le chemin relatif du fichier selon le dossier d'exécution courant (<code>CWD</code> - <em>Current Wirking Directory</em>). Si le fichier n'est pas accessible au démarrage da l'application, l'icône par défaut de <code>Windows</code> est affichée.</p>
+<p>Si cette fonction n'a pas été exécutée, la valeur par défaut est la chaîne de caractères <code>"EzGameLogoMedium.png"</code>.</p>
+<p>À l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application en utilisant le moteur donné en argument template.">Application::run</a>, si la chaîne de caractères obtenue par le <code>GameEngine</code> est vide, la valeur est celle par défaut : <code>"EzGameLogoMedium.png"</code>.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>le nom du fichier image utilisé pour l'icône de l'application. </dd></dl>
 
 </div>
 </div>
@@ -213,50 +224,55 @@ template&lt;GameEngineRequirements GE&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Exécute l'application graphique en utilisant le moteur donné. </p>
-<p>L'appel de cette fonction lance l'exécution formelle du programme. Cette fonction est bloquante et tourne en boucle tant qu'elle n'est pas terminée. La fin de son exécution dépend la valeur de retour de la fonction <code>processEvents</code> (voir détails plus bas).</p>
-<p>Cette fonction est une fonction <code>template</code> et requiert une classe qui soit donnée à titre d'argument <code>template</code> (entre chevrons <code>&lt;...&gt;</code>). Voir les détails du concept <a class="el" href="conceptezgame_1_1_game_engine_requirements.html" title="Ce concept vérifie qu&#39;une classe satisfait aux exigences nécessaires afin de servir de moteur de jeu ...">ezgame::GameEngineRequirements</a>.</p>
-<p>Quelques éléments en rafal :</p><ul>
-<li><code>T</code> doit avoir :<ul>
-<li><code>float <a class="el" href="classezgame_1_1_application.html#a434d430585dd9fe398567d8e69e1174a" title="Retourne la largeur de la surface graphique.">width() const</a></code> : fonction retournant la largeur de la fenêtre graphique. Cette valeur est bornée par l'interval [64, 2048]. Voir la fonction <a class="el" href="classezgame_1_1_application.html#a434d430585dd9fe398567d8e69e1174a" title="Retourne la largeur de la surface graphique.">Application::width</a> pour les détails.</li>
-<li><code>float <a class="el" href="classezgame_1_1_application.html#a711b04b518e27f97e20f6cd362288a68" title="Retourne la hauteur de la surface graphique.">height() const</a></code> : fonction retournant la hauteur de la fenêtre graphique. Cette valeur est bornée par l'interval [64, 2048]. Voir la fonction <a class="el" href="classezgame_1_1_application.html#a711b04b518e27f97e20f6cd362288a68" title="Retourne la hauteur de la surface graphique.">Application::height</a> pour les détails.</li>
-<li><code>std::string <a class="el" href="classezgame_1_1_application.html#ae7c77461f3f3f36a54b25838fe0bbc8a" title="Retourne le titre de la fenêtre.">title() const</a></code> : fonction retournant le titre de la fenêtre graphique. Voir la fonction <a class="el" href="classezgame_1_1_application.html#ae7c77461f3f3f36a54b25838fe0bbc8a" title="Retourne le titre de la fenêtre.">Application::title</a> pour les détails.</li>
-<li><code>std::string <a class="el" href="classezgame_1_1_application.html#a05561789ec7bd2cb75ac7ab07c57da87" title="Retourne le nom du fichier image utilisé pour l&#39;icône de la fenêtre.">iconFileName() const</a></code> : fonction retournant le nom du fichier de l'icône de la fenêtre graphique. Voir la fonction <a class="el" href="classezgame_1_1_application.html#a05561789ec7bd2cb75ac7ab07c57da87" title="Retourne le nom du fichier image utilisé pour l&#39;icône de la fenêtre.">Application::iconFileName</a> pour les détails.</li>
-<li><code>bool processEvents(<a class="el" href="classezgame_1_1_keyboard.html" title="Classe permettant de connaître l&#39;état du clavier.">ezgame::Keyboard</a> const&amp; keyboard, <a class="el" href="classezgame_1_1_timer.html" title="Classe utilitaire donnant accès à des métriques de temps écoulé.">ezgame::Timer</a> const&amp; timer)</code> : fonction réalisant les calculs pour chaque pas de simulation.</li>
-<li><code>void processDisplay(<a class="el" href="classezgame_1_1_screen.html" title="Classe permettant de dessiner à l&#39;écran.">ezgame::Screen</a> &amp; screen)</code> : fonction réalisant la mise à jour de l'affichage pour chaque pas de simulation.</li>
+<p>Exécute l'application en utilisant le moteur donné en argument <code>template</code>. </p>
+<p>L'appel de cette fonction lance l'exécution formelle du programme. C'est elle qui initialise l'application :</p><ul>
+<li>taille de la surface graphique</li>
+<li>titre et icône de l'application</li>
 </ul>
-</li>
+<p>Cette fonction constitue la boucle principale du programme. Elle est bloquante tant que la boucle n'est pas terminée. La fin de son exécution dépend de la valeur de retour de la fonction <code>processEvents</code> (voir les détails plus bas).</p>
+<p>Cette fonction est une fonction <code>template</code> nécessitant une classe répondant au concept <a class="el" href="conceptezgame_1_1_game_engine_requirements.html" title="Ce concept vérifie qu&#39;une classe satisfait aux exigences nécessaires afin de servir de moteur de jeu ...">ezgame::GameEngineRequirements</a>. Un <code>template</code> permet de passer une classe et non un objet à titre d'argument. Ce type de passage se fait entre chevrons <code>&lt;...&gt;</code> et non entre parenthèses <code>(...)</code>.</p>
+<p>Vous devez absolument consulter la documentation du concept <a class="el" href="conceptezgame_1_1_game_engine_requirements.html" title="Ce concept vérifie qu&#39;une classe satisfait aux exigences nécessaires afin de servir de moteur de jeu ...">ezgame::GameEngineRequirements</a> pour comprendre quels sont les éléments attendus du moteur de jeu.</p>
+<p>Finalement, il est important de comprendre que l'application tourne en boucle et appel indéfiniment les deux fonctions obligatoires :</p><ul>
+<li><code>processEvents</code></li>
+<li><code>processDisplay</code></li>
 </ul>
-<p>Il est important de comprendre que l'application tourne en boucle et appel indéfiniment les deux fonctions. La valeur retournée par la fonction processEvents détermine la fin de la boucle :</p><ul>
+<p>La valeur retournée par la fonction <code>processEvents</code> détermine la fin de la boucle :</p><ul>
 <li>si vrai : poursuit l'exécution normale du programme</li>
 <li>si faux : l'application termine immédiatement et abruptement</li>
 </ul>
 <p>Ainsi, le corps du programme se résume à : </p><pre class="fragment">//
-//          Application::run
-//          &gt;--------------------+
-//                               |
-//                               |
-//          +--------------------v--------------+
-//          |                    |              |
-//          |           +--------v-------+      |
-//          |     +-----&gt; processEvents  |      |
-//          |     |     +--------v-------+      |
-//          |     |              |              |
-//          |     |              v              |
-//          |     |             _-_             |
-//          |     |          _-'   '-_  faux    |
-//          |     |         &lt;         &gt;-------------&gt;[ out ]
-//          |     |          '-_   _-'          |
-//          |     |             'v'             |
-//          |     |         vrai |              |
-//          |     |              |              |
-//          |     |     +--------v-------+      |
-//          |     |     | processDisplay |      |
-//          |     |     +--------v-------+      |
-//          |     |              |              |
-//          |     +--------------+              |
-//          |                                   |
-//          +-----------------------------------+
+//          Application app;
+//          app.run&lt;GameEngine&gt;()
+//          [ start ]&gt;──────────-┐
+//                               │
+//                               │
+//              ┌────────────────V────────────────┐
+//              │ initialisation de l'application │
+//              │        par le GameEngine        │
+//              └────────────────V────────────────┘
+//                               │
+//                               │
+//          ┌─[ while ]───────────────────────────────┐
+//          │                    │                    │
+//          │           ┌────────V────────┐           │
+//          │       ┌───&gt;  processEvents  │           │
+//          │       │   └────────V────────┘           │
+//          │       │            │                    │
+//          │       │            V                    │
+//          │       │           _^_                   │
+//          │       │        _-'   '-_  faux          │
+//          │       │       &lt;         &gt;───────────────│─────&gt;[ out ]
+//          │       │        '-_   _-'                │
+//          │       │           'v'                   │
+//          │       │       vrai │                    │
+//          │       │            │                    │
+//          │       │   ┌────────V────────┐           │
+//          │       │   | processDisplay  |           │
+//          │       │   └────────V────────┘           │
+//          │       │            │                    │
+//          │       └────────────┘                    │
+//          │                                         │
+//          └─────────────────────────────────────────┘
 //
 // </pre><dl class="tparams"><dt>Paramètres du template</dt><dd>
   <table class="tparams">
@@ -282,9 +298,10 @@ template&lt;GameEngineRequirements GE&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Retourne le titre de la fenêtre. </p>
-<p>La valeur retournée est définie seulement après l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application graphique en utilisant le moteur donné.">Application::run</a>. Sinon, la valeur est une chaîne de caractères vide.</p>
-<p>Si une chaîne de caractères vide est retournée, le nom par défaut de la librairie est utilisé.</p>
+<p>Accesseur retournant le titre de la fenêtre. </p>
+<p>L'application est initialisée lors de l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application en utilisant le moteur donné en argument template.">Application::run</a>.</p>
+<p>Si cette fonction n'a pas été exécutée, la valeur par défaut est la chaîne de caractères <code>"EzGame"</code>.</p>
+<p>À l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application en utilisant le moteur donné en argument template.">Application::run</a>, si la chaîne de caractères obtenue par le <code>GameEngine</code> est vide, la valeur est celle par défaut : <code>"EzGame"</code>.</p>
 <dl class="section return"><dt>Renvoie</dt><dd>Le titre de l'application. </dd></dl>
 
 </div>
@@ -304,8 +321,10 @@ template&lt;GameEngineRequirements GE&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Retourne la largeur de la surface graphique. </p>
-<p>La valeur retournée est définie seulement après l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application graphique en utilisant le moteur donné.">Application::run</a>. Sinon, la valeur est 0. La valeur déterminée par la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application graphique en utilisant le moteur donné.">Application::run</a> est bornée par l'interval [64, 2048].</p>
+<p>Accesseur retournant la largeur de la surface graphique. </p>
+<p>La surface graphique est initialisée lors de l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application en utilisant le moteur donné en argument template.">Application::run</a>.</p>
+<p>Si cette fonction n'a pas été exécutée, la valeur est 0. D'ailleurs, la valeur 0 indique que l'application n'a pas été initialisée.</p>
+<p>À l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application en utilisant le moteur donné en argument template.">Application::run</a>, la valeur obtenue par le <code>GameEngine</code> est bornée dans l'intervalle [64, 2048].</p>
 <dl class="section return"><dt>Renvoie</dt><dd>La dimension horizontale de la surface graphique. </dd></dl>
 
 </div>

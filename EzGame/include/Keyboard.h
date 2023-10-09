@@ -13,6 +13,42 @@ namespace ezgame {
     //! \class Keyboard
     //! 
     //! \brief Classe permettant de connaître l'état du clavier.
+    //! 
+    //! \details 
+    //! 
+    //! \anchor n_key_rollover 
+    //! **Attention** au problème de « _n-key rollover_ »
+    //! 
+    //! Le terme « _n-key rollover_ » désigne la capacité d'un clavier à 
+    //! enregistrer simultanément un certain nombre de touches pressées. 
+    //! Ce concept est crucial pour garantir que toutes les entrées sont 
+    //! correctement transmises au système informatique. 
+    //! 
+    //! Le problème n'est pas de nature logiciel mais plutôt lié aux 
+    //! capacités matérielles du clavier présent. Un clavier haut de gamme 
+    //! peut offrir la capacité d'enregistrer l'appuie simultanée de toutes
+    //! les touches du clavier. Un clavier moins haut de gamme peut être 
+    //! limité au nombre de touches pouvant être détectée en même temps. 
+    //! Cette limitation se manifeste autant par certaines combinaisons de 
+    //! touches spécifiques que par le nombre de touches.
+    //! 
+    //! Lorsque le matériel ne possède pas une capacité de 
+    //! « _n-key rollover_ » adéquate, il peut y avoir des omissions ou des 
+    //! confusions dans la transmission des signaux de touches au système 
+    //! informatique. Cette situation peut rendre l'application impossible 
+    //! à correctement opérée si l'appui de touches simultanées est 
+    //! nécessaire.
+    //! 
+    //! Il est essentiel de tester cette fonctionnalité pour assurer la 
+    //! fiabilité du clavier, surtout dans des contextes nécessitant des 
+    //! combinaisons de touches complexes.Les tests peuvent être effectués 
+    //! via des logiciels dédiés ou par des méthodes empiriques, où un 
+    //! utilisateur presse plusieurs touches simultanément pour évaluer la 
+    //! performance du clavier.
+    //!
+    //! Voir <a href=https://www.microsoft.com/applied-sciences/projects/anti-ghosting-demo target="_blank">
+    //! ce lien</a> pour faire un test manuel des possibilités du clavier 
+    //! concernant la situation du « _n-key rollover_ »
     class Keyboard
     {
     public:
@@ -126,7 +162,19 @@ namespace ezgame {
             __count__   //!< \hideinitializer
         };
 
-        bool isKeyPressed(Key key) const; //!< Retourne vrai si la touche demandée est appuyée sinon retourne faux.
+        //! \brief Accesseur retournant si une touche est appuyée.
+        //! 
+        //! \details Il est possible de connaître l'état du clavier une touche 
+        //! à la fois. Il suffit d'appeler cette fonction avec la touche 
+        //! désirée.
+        //! 
+        //! Attention aux limitations matérielles. Voir le concept de 
+        //! \ref n_key_rollover "« _n-key rollover_ »".
+        //! 
+        //! \param key La touche dont il faut connaître l'état : appuyé ou non 
+        //! 
+        //! \return L'état de la touche spécifiée : vrai si appuyé, sinon faux.
+        bool isKeyPressed(Key key) const;
 
     private:
         Keyboard() = default;

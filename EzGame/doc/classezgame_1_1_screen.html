@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="EzGameLogoMedium.png"/></td>
   <td id="projectalign">
    <div id="projectname">EzGame
    </div>
@@ -89,29 +97,23 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:ae3f3c022151da2c654126a57f1b81b86" id="r_ae3f3c022151da2c654126a57f1b81b86"><td class="memItemLeft" align="right" valign="top"><a id="ae3f3c022151da2c654126a57f1b81b86" name="ae3f3c022151da2c654126a57f1b81b86"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>width</b> () const</td></tr>
-<tr class="memdesc:ae3f3c022151da2c654126a57f1b81b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la largeur de la surface graphique. <br /></td></tr>
+<tr class="memitem:ae3f3c022151da2c654126a57f1b81b86" id="r_ae3f3c022151da2c654126a57f1b81b86"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_screen.html#ae3f3c022151da2c654126a57f1b81b86">width</a> () const</td></tr>
+<tr class="memdesc:ae3f3c022151da2c654126a57f1b81b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur retournant la largeur de la surface graphique.  <br /></td></tr>
 <tr class="separator:ae3f3c022151da2c654126a57f1b81b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd35c0bb95e0e04c05edb1c909243248" id="r_afd35c0bb95e0e04c05edb1c909243248"><td class="memItemLeft" align="right" valign="top"><a id="afd35c0bb95e0e04c05edb1c909243248" name="afd35c0bb95e0e04c05edb1c909243248"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>height</b> () const</td></tr>
-<tr class="memdesc:afd35c0bb95e0e04c05edb1c909243248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la hauteur de la surface graphique. <br /></td></tr>
+<tr class="memitem:afd35c0bb95e0e04c05edb1c909243248" id="r_afd35c0bb95e0e04c05edb1c909243248"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_screen.html#afd35c0bb95e0e04c05edb1c909243248">height</a> () const</td></tr>
+<tr class="memdesc:afd35c0bb95e0e04c05edb1c909243248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur retournant la hauteur de la surface graphique.  <br /></td></tr>
 <tr class="separator:afd35c0bb95e0e04c05edb1c909243248"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab53e91fea07d8723a9d45e213ce27ec5" id="r_ab53e91fea07d8723a9d45e213ce27ec5"><td class="memItemLeft" align="right" valign="top"><a id="ab53e91fea07d8723a9d45e213ce27ec5" name="ab53e91fea07d8723a9d45e213ce27ec5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
-<tr class="memdesc:ab53e91fea07d8723a9d45e213ce27ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rempli l'écran de la couleur noire. La couleur étant opaque, efface tout les éléments présents. <br /></td></tr>
+<tr class="memitem:ab53e91fea07d8723a9d45e213ce27ec5" id="r_ab53e91fea07d8723a9d45e213ce27ec5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_screen.html#ab53e91fea07d8723a9d45e213ce27ec5">clear</a> ()</td></tr>
+<tr class="memdesc:ab53e91fea07d8723a9d45e213ce27ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rempli l'écran de la couleur noire.  <br /></td></tr>
 <tr class="separator:ab53e91fea07d8723a9d45e213ce27ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a172e7e6538597a3d750da1017267f32d" id="r_a172e7e6538597a3d750da1017267f32d"><td class="memItemLeft" align="right" valign="top"><a id="a172e7e6538597a3d750da1017267f32d" name="a172e7e6538597a3d750da1017267f32d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> (<a class="el" href="classezgame_1_1_color.html">Color</a> const &amp;color)</td></tr>
-<tr class="memdesc:a172e7e6538597a3d750da1017267f32d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rempli l'écran de la couleur donnée. La transparence de la couleur est utilisée. <br /></td></tr>
+<tr class="memitem:a172e7e6538597a3d750da1017267f32d" id="r_a172e7e6538597a3d750da1017267f32d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_screen.html#a172e7e6538597a3d750da1017267f32d">clear</a> (<a class="el" href="classezgame_1_1_color.html">Color</a> const &amp;color)</td></tr>
+<tr class="memdesc:a172e7e6538597a3d750da1017267f32d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rempli l'écran de la couleur donnée.  <br /></td></tr>
 <tr class="separator:a172e7e6538597a3d750da1017267f32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cc80ad5918f68aad58c39305a1330aa" id="r_a4cc80ad5918f68aad58c39305a1330aa"><td class="memItemLeft" align="right" valign="top"><a id="a4cc80ad5918f68aad58c39305a1330aa" name="a4cc80ad5918f68aad58c39305a1330aa"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (<a class="el" href="classezgame_1_1_circle.html">Circle</a> const &amp;circle)</td></tr>
-<tr class="memdesc:a4cc80ad5918f68aad58c39305a1330aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine le cercle donné. <br /></td></tr>
+<tr class="memitem:a4cc80ad5918f68aad58c39305a1330aa" id="r_a4cc80ad5918f68aad58c39305a1330aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_screen.html#a4cc80ad5918f68aad58c39305a1330aa">draw</a> (<a class="el" href="classezgame_1_1_circle.html">Circle</a> const &amp;circle)</td></tr>
+<tr class="memdesc:a4cc80ad5918f68aad58c39305a1330aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine le cercle donné.  <br /></td></tr>
 <tr class="separator:a4cc80ad5918f68aad58c39305a1330aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaae48433345d0ea54488763c00ebc90b" id="r_aaae48433345d0ea54488763c00ebc90b"><td class="memItemLeft" align="right" valign="top"><a id="aaae48433345d0ea54488763c00ebc90b" name="aaae48433345d0ea54488763c00ebc90b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (<a class="el" href="classezgame_1_1_text.html">Text</a> const &amp;text)</td></tr>
-<tr class="memdesc:aaae48433345d0ea54488763c00ebc90b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine le texte donné. <br /></td></tr>
+<tr class="memitem:aaae48433345d0ea54488763c00ebc90b" id="r_aaae48433345d0ea54488763c00ebc90b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_screen.html#aaae48433345d0ea54488763c00ebc90b">draw</a> (<a class="el" href="classezgame_1_1_text.html">Text</a> const &amp;text)</td></tr>
+<tr class="memdesc:aaae48433345d0ea54488763c00ebc90b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dessine le texte donné.  <br /></td></tr>
 <tr class="separator:aaae48433345d0ea54488763c00ebc90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -122,13 +124,177 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Application</b></td>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe permettant de dessiner à l'écran. </p>
-<p>\detail La classe <a class="el" href="classezgame_1_1_screen.html" title="Classe permettant de dessiner à l&#39;écran.">Screen</a> permet de dessiner sur la surface graphique les primitives disponibles avec la librairie <code>EzGame</code>.</p>
+<p>La classe <a class="el" href="classezgame_1_1_screen.html" title="Classe permettant de dessiner à l&#39;écran.">Screen</a> permet de dessiner sur la surface graphique les primitives disponibles avec la librairie <code>EzGame</code>.</p>
 <p>Il est possible de :</p><ul>
-<li>connaître la taille de la surface graphique (voir <a class="el" href="classezgame_1_1_screen.html#ae3f3c022151da2c654126a57f1b81b86" title="Retourne la largeur de la surface graphique.">Screen::width</a> et <a class="el" href="classezgame_1_1_screen.html#afd35c0bb95e0e04c05edb1c909243248" title="Retourne la hauteur de la surface graphique.">Screen::height</a>)</li>
-<li>remplir la surface graphique d'une couleur uniforme (voir <a class="el" href="classezgame_1_1_screen.html#ab53e91fea07d8723a9d45e213ce27ec5" title="Rempli l&#39;écran de la couleur noire. La couleur étant opaque, efface tout les éléments présents.">Screen::clear</a>)</li>
-<li>dessiner un objet <a class="el" href="classezgame_1_1_circle.html" title="Classe représentant un cercle.">Circle</a> ou <a class="el" href="classezgame_1_1_text.html" title="Classe représentant un texte.">Text</a> (voir <a class="el" href="classezgame_1_1_screen.html#a4cc80ad5918f68aad58c39305a1330aa" title="Dessine le cercle donné.">Screen::draw</a>) </li>
+<li>connaître la taille de la surface graphique :<ul>
+<li><a class="el" href="classezgame_1_1_screen.html#ae3f3c022151da2c654126a57f1b81b86" title="Accesseur retournant la largeur de la surface graphique.">Screen::width</a></li>
+<li><a class="el" href="classezgame_1_1_screen.html#afd35c0bb95e0e04c05edb1c909243248" title="Accesseur retournant la hauteur de la surface graphique.">Screen::height</a></li>
 </ul>
-</div></div><!-- contents -->
+</li>
+<li>remplir la surface graphique d'une couleur uniforme :<ul>
+<li><a class="el" href="classezgame_1_1_screen.html#ab53e91fea07d8723a9d45e213ce27ec5" title="Rempli l&#39;écran de la couleur noire.">Screen::clear</a></li>
+</ul>
+</li>
+<li>dessiner un objet <a class="el" href="classezgame_1_1_circle.html" title="Classe représentant un cercle.">Circle</a> ou <a class="el" href="classezgame_1_1_text.html" title="Classe représentant un texte.">Text</a> :<ul>
+<li><a class="el" href="classezgame_1_1_screen.html#a4cc80ad5918f68aad58c39305a1330aa" title="Dessine le cercle donné.">Screen::draw</a> </li>
+</ul>
+</li>
+</ul>
+</div><h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="ab53e91fea07d8723a9d45e213ce27ec5" name="ab53e91fea07d8723a9d45e213ce27ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab53e91fea07d8723a9d45e213ce27ec5">&#9670;&#160;</a></span>clear() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezgame::Screen::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rempli l'écran de la couleur noire. </p>
+<p>La couleur étant opaque, cette fonction a pour effet d'effacer tous les éléments présents. </p>
+
+</div>
+</div>
+<a id="a172e7e6538597a3d750da1017267f32d" name="a172e7e6538597a3d750da1017267f32d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a172e7e6538597a3d750da1017267f32d">&#9670;&#160;</a></span>clear() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezgame::Screen::clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classezgame_1_1_color.html">Color</a> const &amp;&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rempli l'écran de la couleur donnée. </p>
+<p>Puisque la transparence de la couleur est utilisée :</p><ul>
+<li>une couleur opaque a pour effet d'effacer tout ce qui se trouve sur la surface graphique</li>
+<li>une couleur semi transparente permet un effet intéressant </li>
+</ul>
+
+</div>
+</div>
+<a id="a4cc80ad5918f68aad58c39305a1330aa" name="a4cc80ad5918f68aad58c39305a1330aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cc80ad5918f68aad58c39305a1330aa">&#9670;&#160;</a></span>draw() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezgame::Screen::draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classezgame_1_1_circle.html">Circle</a> const &amp;&#160;</td>
+          <td class="paramname"><em>circle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine le cercle donné. </p>
+<p>Le cercle est dessiné en considérant :</p><ul>
+<li>taille et positionnement selon :<ul>
+<li>le rayon</li>
+<li>la position</li>
+<li>l'alignement</li>
+</ul>
+</li>
+<li>l'apparence selon :<ul>
+<li>la couleur de remplissage</li>
+<li>la couleur et l'épaisseur du contour</li>
+</ul>
+</li>
+</ul>
+<p>Voir la classe <a class="el" href="classezgame_1_1_circle.html" title="Classe représentant un cercle.">Circle</a> pour plus de détails. </p>
+
+</div>
+</div>
+<a id="aaae48433345d0ea54488763c00ebc90b" name="aaae48433345d0ea54488763c00ebc90b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaae48433345d0ea54488763c00ebc90b">&#9670;&#160;</a></span>draw() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ezgame::Screen::draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classezgame_1_1_text.html">Text</a> const &amp;&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dessine le texte donné. </p>
+<p>Le texte est dessiné en considérant :</p><ul>
+<li>taille et positionnement selon :<ul>
+<li>la taille de la police de caractère</li>
+<li>le texte lui-même</li>
+<li>la position</li>
+<li>l'alignement</li>
+</ul>
+</li>
+<li>l'apparence selon :<ul>
+<li>la couleur de remplissage</li>
+<li>la couleur et l'épaisseur du contour</li>
+</ul>
+</li>
+</ul>
+<p>Voir la classe <a class="el" href="classezgame_1_1_text.html" title="Classe représentant un texte.">Text</a> pour plus de détails. </p>
+
+</div>
+</div>
+<a id="afd35c0bb95e0e04c05edb1c909243248" name="afd35c0bb95e0e04c05edb1c909243248"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd35c0bb95e0e04c05edb1c909243248">&#9670;&#160;</a></span>height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t ezgame::Screen::height </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur retournant la hauteur de la surface graphique. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>La hauteur de la surface graphique. </dd></dl>
+
+</div>
+</div>
+<a id="ae3f3c022151da2c654126a57f1b81b86" name="ae3f3c022151da2c654126a57f1b81b86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3f3c022151da2c654126a57f1b81b86">&#9670;&#160;</a></span>width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t ezgame::Screen::width </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur retournant la largeur de la surface graphique. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>La largeur de la surface graphique. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8

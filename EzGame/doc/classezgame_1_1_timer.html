@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="EzGameLogoMedium.png"/></td>
   <td id="projectalign">
    <div id="projectname">EzGame
    </div>
@@ -144,7 +152,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Application</b></td>
 
 <p>Retourne une estimation du nombre de tic par seconde moyen (<em>frame per second</em>). </p>
 <p>Attention, l'estimation est basée sur une moyenne du temps écoulé entre chacun des <em>n</em> derniers tics. Ainsi, les <em>n</em> premières évaluations sont approximatives et biaisées.</p>
-<p>La valeur <em>n</em> est par défaut 1000. </p>
+<p>La valeur <em>n</em> est par défaut 1000.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>Une estimation du nombre de tic par seconde. </dd></dl>
 
 </div>
 </div>
@@ -165,7 +174,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Application</b></td>
 
 <p>Retourne le temps écoulé depuis le dernier tic en seconde. </p>
 <p>Le temps écoulé est calculé entre chaque appel de la fonction <code>processEvents</code>.</p>
-<p>Attention, la conversion en nombre réel engendre une perte de précision. </p>
+<p>Attention, la conversion en nombre réel engendre une perte de précision.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>Le temps écoulé depuis le dernier tic (approximation). </dd></dl>
 
 </div>
 </div>
@@ -185,8 +195,9 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Application</b></td>
 </div><div class="memdoc">
 
 <p>Retourne le temps écoulé depuis le démarrage de l'application en seconde. </p>
-<p>Le temps donné est celui depuis la création de l'application (objet <a class="el" href="classezgame_1_1_application.html" title="Constitue l&#39;application elle-même et est au coeur de la bibliothèque EzGame.">Application</a>) et non depuis l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application graphique en utilisant le moteur donné.">Application::run</a>.</p>
-<p>Attention, la conversion en nombre réel engendre une perte de précision. </p>
+<p>Le temps donné est celui depuis la création de l'application (objet <a class="el" href="classezgame_1_1_application.html" title="Constitue l&#39;application elle-même.">Application</a>) et non depuis l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application en utilisant le moteur donné en argument template.">Application::run</a>.</p>
+<p>Attention, la conversion en nombre réel engendre une perte de précision.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>Le temps écoulé depuis la création de l'application (approximation). </dd></dl>
 
 </div>
 </div>
@@ -206,7 +217,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Application</b></td>
 </div><div class="memdoc">
 
 <p>Retourne le temps écoulé depuis le dernier tic en microseconde. </p>
-<p>Le temps écoulé est calculé entre chaque appel de la fonction <code>processEvents</code>. </p>
+<p>Le temps écoulé est calculé entre chaque appel de la fonction <code>processEvents</code>.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>Le temps écoulé depuis le dernier tic. </dd></dl>
 
 </div>
 </div>
@@ -226,7 +238,8 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Application</b></td>
 </div><div class="memdoc">
 
 <p>Retourne le temps écoulé depuis le démarrage de l'application en microseconde. </p>
-<p>Le temps donné est celui depuis la création de l'application (objet <a class="el" href="classezgame_1_1_application.html" title="Constitue l&#39;application elle-même et est au coeur de la bibliothèque EzGame.">Application</a>) et non depuis l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application graphique en utilisant le moteur donné.">Application::run</a>. </p>
+<p>Le temps donné est celui depuis la création de l'application (objet <a class="el" href="classezgame_1_1_application.html" title="Constitue l&#39;application elle-même.">Application</a>) et non depuis l'appel de la fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application en utilisant le moteur donné en argument template.">Application::run</a>.</p>
+<dl class="section return"><dt>Renvoie</dt><dd>Le temps écoulé depuis la création de l'application. </dd></dl>
 
 </div>
 </div>

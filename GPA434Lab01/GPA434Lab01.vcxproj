@@ -175,6 +175,9 @@
     <ClInclude Include="StandardMapping.h" />
     <ClInclude Include="Type.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Rapport.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

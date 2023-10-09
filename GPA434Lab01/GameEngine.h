@@ -11,6 +11,7 @@ class GameEngine
     public:
         GameEngine() {
             scoreManager.setup(player0, player1, gameArena);
+            resetGame(player0, player1);
             player0.newMatch(false,false,gameArena,dome);
             player1.newMatch(false, false, gameArena, dome);
         };
@@ -20,7 +21,7 @@ class GameEngine
         std::string title() const { return "Dome Defender"; }
         std::string iconFileName() const { return ""; }
 
-        bool provessEvents(ezgame::Keyboard const& keyboard, ezgame::Timer const& timer);
+        bool processEvents(ezgame::Keyboard const& keyboard, ezgame::Timer const& timer);
         void processDisplay(ezgame::Screen& screen);
 
     private:
@@ -33,9 +34,14 @@ class GameEngine
         Modifier modifier = Modifier(gameArena, dome);
         ScoreManager scoreManager = ScoreManager();
 
-        void handleDefenderWin();
         void resetGame();
-        void handleContenderWin();
-   
+        void resetGame(Player& defender, Player& pretender);
+        void handleDefenderWin(Player& defender, Player& pretender);
+        void handleContenderWin(Player& defender, Player& pretender);
+        bool isAppStillRunning(ezgame::Keyboard const& keyboard);
+        void manageEndMatch();
+        void manageEndMatch(Player& defender, Player& pretender);
+        void manageEndGame(ezgame::Keyboard const& keyboard);
+        void setDomeColorFromPlayer(Player& defender);
 
 };

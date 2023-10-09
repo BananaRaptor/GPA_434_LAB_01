@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="EzGameLogoMedium.png"/></td>
   <td id="projectalign">
    <div id="projectname">EzGame
    </div>
@@ -95,49 +103,49 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">class </span>Application;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html">   30</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="comment">// Accesseurs</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html#ae3f3c022151da2c654126a57f1b81b86">   36</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classezgame_1_1_screen.html#ae3f3c022151da2c654126a57f1b81b86">width</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html#afd35c0bb95e0e04c05edb1c909243248">   39</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classezgame_1_1_screen.html#afd35c0bb95e0e04c05edb1c909243248">height</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="comment">// Mutateurs</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html#ab53e91fea07d8723a9d45e213ce27ec5">   45</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classezgame_1_1_screen.html#ab53e91fea07d8723a9d45e213ce27ec5">clear</a>();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html#a172e7e6538597a3d750da1017267f32d">   49</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classezgame_1_1_screen.html#a172e7e6538597a3d750da1017267f32d">clear</a>(<a class="code hl_class" href="classezgame_1_1_color.html">Color</a> <span class="keyword">const</span>&amp; color);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html#a4cc80ad5918f68aad58c39305a1330aa">   52</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classezgame_1_1_screen.html#a4cc80ad5918f68aad58c39305a1330aa">draw</a>(<a class="code hl_class" href="classezgame_1_1_circle.html">Circle</a> <span class="keyword">const</span>&amp; circle);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html#aaae48433345d0ea54488763c00ebc90b">   55</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classezgame_1_1_screen.html#aaae48433345d0ea54488763c00ebc90b">draw</a>(<a class="code hl_class" href="classezgame_1_1_text.html">Text</a> <span class="keyword">const</span>&amp; text);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a>(<a class="code hl_class" href="classezgame_1_1_application.html">Application</a> &amp; app);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a>(<a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a> <span class="keyword">const</span> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a>(<a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a>&amp; operator=(<a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a> <span class="keyword">const</span> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a>&amp; operator=(<a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_class" href="classezgame_1_1_screen.html">~Screen</a>();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">class </span>Impl;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        std::unique_ptr&lt;Impl&gt; mImpl;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classezgame_1_1_application.html">Application</a>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    };</div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html">   33</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="comment">// Accesseurs</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html#ae3f3c022151da2c654126a57f1b81b86">   42</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classezgame_1_1_screen.html#ae3f3c022151da2c654126a57f1b81b86">width</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html#afd35c0bb95e0e04c05edb1c909243248">   48</a></span>        <span class="keywordtype">size_t</span> <a class="code hl_function" href="classezgame_1_1_screen.html#afd35c0bb95e0e04c05edb1c909243248">height</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="comment">// Mutateurs</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html#ab53e91fea07d8723a9d45e213ce27ec5">   57</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classezgame_1_1_screen.html#ab53e91fea07d8723a9d45e213ce27ec5">clear</a>();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html#a172e7e6538597a3d750da1017267f32d">   66</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classezgame_1_1_screen.html#a172e7e6538597a3d750da1017267f32d">clear</a>(<a class="code hl_class" href="classezgame_1_1_color.html">Color</a> <span class="keyword">const</span>&amp; color);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html#a4cc80ad5918f68aad58c39305a1330aa">   81</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classezgame_1_1_screen.html#a4cc80ad5918f68aad58c39305a1330aa">draw</a>(<a class="code hl_class" href="classezgame_1_1_circle.html">Circle</a> <span class="keyword">const</span>&amp; circle);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classezgame_1_1_screen.html#aaae48433345d0ea54488763c00ebc90b">   97</a></span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classezgame_1_1_screen.html#aaae48433345d0ea54488763c00ebc90b">draw</a>(<a class="code hl_class" href="classezgame_1_1_text.html">Text</a> <span class="keyword">const</span>&amp; text);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a>(<a class="code hl_class" href="classezgame_1_1_application.html">Application</a> &amp; app);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a>(<a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a> <span class="keyword">const</span> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a>(<a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a>&amp; operator=(<a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a> <span class="keyword">const</span> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a>&amp; operator=(<a class="code hl_class" href="classezgame_1_1_screen.html">Screen</a> &amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <a class="code hl_class" href="classezgame_1_1_screen.html">~Screen</a>();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keyword">class </span>Impl;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        std::unique_ptr&lt;Impl&gt; mImpl;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classezgame_1_1_application.html">Application</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    };</div>
 </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>} <span class="comment">// namespace ezgame</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif </span><span class="comment">// _EZGAME_SCREEN_H_</span></div>
-<div class="ttc" id="aclassezgame_1_1_application_html"><div class="ttname"><a href="classezgame_1_1_application.html">ezgame::Application</a></div><div class="ttdoc">Constitue l'application elle-même et est au coeur de la bibliothèque EzGame.</div><div class="ttdef"><b>Definition</b> Application.h:103</div></div>
-<div class="ttc" id="aclassezgame_1_1_circle_html"><div class="ttname"><a href="classezgame_1_1_circle.html">ezgame::Circle</a></div><div class="ttdoc">Classe représentant un cercle.</div><div class="ttdef"><b>Definition</b> Circle.h:23</div></div>
-<div class="ttc" id="aclassezgame_1_1_color_html"><div class="ttname"><a href="classezgame_1_1_color.html">ezgame::Color</a></div><div class="ttdoc">Classe représentant une couleur.</div><div class="ttdef"><b>Definition</b> Color.h:61</div></div>
-<div class="ttc" id="aclassezgame_1_1_screen_html"><div class="ttname"><a href="classezgame_1_1_screen.html">ezgame::Screen</a></div><div class="ttdoc">Classe permettant de dessiner à l'écran.</div><div class="ttdef"><b>Definition</b> Screen.h:31</div></div>
-<div class="ttc" id="aclassezgame_1_1_screen_html_a172e7e6538597a3d750da1017267f32d"><div class="ttname"><a href="classezgame_1_1_screen.html#a172e7e6538597a3d750da1017267f32d">ezgame::Screen::clear</a></div><div class="ttdeci">void clear(Color const &amp;color)</div><div class="ttdoc">Rempli l'écran de la couleur donnée. La transparence de la couleur est utilisée.</div></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>} <span class="comment">// namespace ezgame</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#endif </span><span class="comment">// _EZGAME_SCREEN_H_</span></div>
+<div class="ttc" id="aclassezgame_1_1_application_html"><div class="ttname"><a href="classezgame_1_1_application.html">ezgame::Application</a></div><div class="ttdoc">Constitue l'application elle-même.</div><div class="ttdef"><b>Definition</b> Application.h:116</div></div>
+<div class="ttc" id="aclassezgame_1_1_circle_html"><div class="ttname"><a href="classezgame_1_1_circle.html">ezgame::Circle</a></div><div class="ttdoc">Classe représentant un cercle.</div><div class="ttdef"><b>Definition</b> Circle.h:29</div></div>
+<div class="ttc" id="aclassezgame_1_1_color_html"><div class="ttname"><a href="classezgame_1_1_color.html">ezgame::Color</a></div><div class="ttdoc">Classe représentant une couleur.</div><div class="ttdef"><b>Definition</b> Color.h:73</div></div>
+<div class="ttc" id="aclassezgame_1_1_screen_html"><div class="ttname"><a href="classezgame_1_1_screen.html">ezgame::Screen</a></div><div class="ttdoc">Classe permettant de dessiner à l'écran.</div><div class="ttdef"><b>Definition</b> Screen.h:34</div></div>
+<div class="ttc" id="aclassezgame_1_1_screen_html_a172e7e6538597a3d750da1017267f32d"><div class="ttname"><a href="classezgame_1_1_screen.html#a172e7e6538597a3d750da1017267f32d">ezgame::Screen::clear</a></div><div class="ttdeci">void clear(Color const &amp;color)</div><div class="ttdoc">Rempli l'écran de la couleur donnée.</div></div>
 <div class="ttc" id="aclassezgame_1_1_screen_html_a4cc80ad5918f68aad58c39305a1330aa"><div class="ttname"><a href="classezgame_1_1_screen.html#a4cc80ad5918f68aad58c39305a1330aa">ezgame::Screen::draw</a></div><div class="ttdeci">void draw(Circle const &amp;circle)</div><div class="ttdoc">Dessine le cercle donné.</div></div>
 <div class="ttc" id="aclassezgame_1_1_screen_html_aaae48433345d0ea54488763c00ebc90b"><div class="ttname"><a href="classezgame_1_1_screen.html#aaae48433345d0ea54488763c00ebc90b">ezgame::Screen::draw</a></div><div class="ttdeci">void draw(Text const &amp;text)</div><div class="ttdoc">Dessine le texte donné.</div></div>
-<div class="ttc" id="aclassezgame_1_1_screen_html_ab53e91fea07d8723a9d45e213ce27ec5"><div class="ttname"><a href="classezgame_1_1_screen.html#ab53e91fea07d8723a9d45e213ce27ec5">ezgame::Screen::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Rempli l'écran de la couleur noire. La couleur étant opaque, efface tout les éléments présents.</div></div>
-<div class="ttc" id="aclassezgame_1_1_screen_html_ae3f3c022151da2c654126a57f1b81b86"><div class="ttname"><a href="classezgame_1_1_screen.html#ae3f3c022151da2c654126a57f1b81b86">ezgame::Screen::width</a></div><div class="ttdeci">size_t width() const</div><div class="ttdoc">Retourne la largeur de la surface graphique.</div></div>
-<div class="ttc" id="aclassezgame_1_1_screen_html_afd35c0bb95e0e04c05edb1c909243248"><div class="ttname"><a href="classezgame_1_1_screen.html#afd35c0bb95e0e04c05edb1c909243248">ezgame::Screen::height</a></div><div class="ttdeci">size_t height() const</div><div class="ttdoc">Retourne la hauteur de la surface graphique.</div></div>
-<div class="ttc" id="aclassezgame_1_1_text_html"><div class="ttname"><a href="classezgame_1_1_text.html">ezgame::Text</a></div><div class="ttdoc">Classe représentant un texte.</div><div class="ttdef"><b>Definition</b> Text.h:24</div></div>
+<div class="ttc" id="aclassezgame_1_1_screen_html_ab53e91fea07d8723a9d45e213ce27ec5"><div class="ttname"><a href="classezgame_1_1_screen.html#ab53e91fea07d8723a9d45e213ce27ec5">ezgame::Screen::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Rempli l'écran de la couleur noire.</div></div>
+<div class="ttc" id="aclassezgame_1_1_screen_html_ae3f3c022151da2c654126a57f1b81b86"><div class="ttname"><a href="classezgame_1_1_screen.html#ae3f3c022151da2c654126a57f1b81b86">ezgame::Screen::width</a></div><div class="ttdeci">size_t width() const</div><div class="ttdoc">Accesseur retournant la largeur de la surface graphique.</div></div>
+<div class="ttc" id="aclassezgame_1_1_screen_html_afd35c0bb95e0e04c05edb1c909243248"><div class="ttname"><a href="classezgame_1_1_screen.html#afd35c0bb95e0e04c05edb1c909243248">ezgame::Screen::height</a></div><div class="ttdeci">size_t height() const</div><div class="ttdoc">Accesseur retournant la hauteur de la surface graphique.</div></div>
+<div class="ttc" id="aclassezgame_1_1_text_html"><div class="ttname"><a href="classezgame_1_1_text.html">ezgame::Text</a></div><div class="ttdoc">Classe représentant un texte.</div><div class="ttdef"><b>Definition</b> Text.h:31</div></div>
 <div class="ttc" id="anamespaceezgame_html"><div class="ttname"><a href="namespaceezgame.html">ezgame</a></div><div class="ttdoc">Le namespace ezgame réuni l'ensemble de la librairie EzGame.</div><div class="ttdef"><b>Definition</b> Alignment.h:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

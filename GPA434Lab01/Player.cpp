@@ -90,6 +90,20 @@ void Player::newMatch(bool hit, bool swap, Arena &arena, Dome &dome)
 	positionPlayer(arena, dome);
 }
 
+void Player::newGame(Role role, Arena arena, Dome dome)
+{
+	mRole = role;
+
+	mSpeed = mDefautlPlayerSpeed;
+	mPlayerShape.setRadius(mDefautlPlayerRadius);
+	mBorderManagementShape.setRadius(mDefaultBorderManagementRadius);
+	mBorderManagement = BorderManagement::Restrict;
+	mHitScore = 0;
+	mTimeAsContender = 0;
+	mTimeAsDefender = 0;
+	positionPlayer(arena, dome);
+}
+
 void Player::swapRole()
 {
 	switch (mRole)

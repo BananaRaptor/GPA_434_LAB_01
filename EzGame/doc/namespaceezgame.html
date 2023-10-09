@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="EzGameLogoMedium.png"/></td>
   <td id="projectalign">
    <div id="projectname">EzGame
    </div>
@@ -84,7 +92,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_application.html">Application</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constitue l'application elle-même et est au coeur de la bibliothèque <code>EzGame</code>.  <a href="classezgame_1_1_application.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constitue l'application elle-même.  <a href="classezgame_1_1_application.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_circle.html">Circle</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classe représentant un cercle.  <a href="classezgame_1_1_circle.html#details">Plus de détails...</a><br /></td></tr>
@@ -108,13 +116,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classe utilitaire donnant accès à des métriques de temps écoulé.  <a href="classezgame_1_1_timer.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_vect2d.html">Vect2d</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classe représentant un vecteur mathématique dans l'espace 2d.  <a href="classezgame_1_1_vect2d.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classe modélisant un vecteur bidimensionnel dans un espace euclidien.  <a href="classezgame_1_1_vect2d.html#details">Plus de détails...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptezgame_1_1_game_engine_requirements.html">GameEngineRequirements</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce concept vérifie qu'une classe satisfait aux exigences nécessaires afin de servir de moteur de jeu pour la librairie <code>EzGame</code>. <br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ce concept vérifie qu'une classe satisfait aux exigences nécessaires afin de servir de moteur de jeu pour la bibliothèque <code>EzGame</code>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -161,14 +169,14 @@ Concepts</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Définit l'alignement des objets graphiques. </p>
-<p>Cette énumération est utilisée pour aligner les objets de type <a class="el" href="classezgame_1_1_circle.html" title="Classe représentant un cercle.">Circle</a> et <a class="el" href="classezgame_1_1_text.html" title="Classe représentant un texte.">Text</a> lors de l'affichage. La position finale sur la surface graphique dépend :</p><ul>
-<li>la position</li>
-<li>la taille</li>
-<li>l'alignement</li>
+<p>Cette énumération est utilisée pour aligner les objets de type <a class="el" href="classezgame_1_1_circle.html" title="Classe représentant un cercle.">Circle</a> et <a class="el" href="classezgame_1_1_text.html" title="Classe représentant un texte.">Text</a> lors de l'affichage. La position finale d'un objet graphique dépend de :</p><ul>
+<li>sa position</li>
+<li>sa taille</li>
+<li>son alignement</li>
 </ul>
-<p>Les fonctions <a class="el" href="classezgame_1_1_screen.html#a4cc80ad5918f68aad58c39305a1330aa" title="Dessine le cercle donné.">Screen::draw</a> (2 surcharges) utilisent toutes ces informations pour déterminer la position finale lors de l'affichage. </p>
+<p>Les fonctions <a class="el" href="classezgame_1_1_screen.html#a4cc80ad5918f68aad58c39305a1330aa" title="Dessine le cercle donné.">ezgame::Screen::draw</a> (il existe 2 surcharges) utilisent ces informations pour déterminer la position finale lors de l'affichage. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="afd3624324e5bdf9ff2084d6112ad8a75a6e16b17a4b152343aedc7444f4440bd8" name="afd3624324e5bdf9ff2084d6112ad8a75a6e16b17a4b152343aedc7444f4440bd8"></a>BaseLeft&#160;</td><td class="fielddoc"><p>Cas spécial pour l'alignement du texte. Équivaut à CenterCenter pour un cercle. </p>
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="afd3624324e5bdf9ff2084d6112ad8a75a6e16b17a4b152343aedc7444f4440bd8" name="afd3624324e5bdf9ff2084d6112ad8a75a6e16b17a4b152343aedc7444f4440bd8"></a>BaseLeft&#160;</td><td class="fielddoc"><p>Cas spécial pour l'alignement du texte. Équivaut à <a class="el" href="namespaceezgame.html#afd3624324e5bdf9ff2084d6112ad8a75a42b56788639363ade366287d21b793bc" title="Centré dans les deux dimensions.">Alignment::CenterCenter</a> pour un cercle. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="afd3624324e5bdf9ff2084d6112ad8a75ab32beb056fbfe36afbabc6c88c81ab36" name="afd3624324e5bdf9ff2084d6112ad8a75ab32beb056fbfe36afbabc6c88c81ab36"></a>TopLeft&#160;</td><td class="fielddoc"><p>Aligné en haut à gauche. </p>
 </td></tr>

@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="EzGameLogoMedium.png"/></td>
   <td id="projectalign">
    <div id="projectname">EzGame
    </div>
@@ -225,9 +233,8 @@ Types publics</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:acc594a2437072f5cd0712b6a934db58e" id="r_acc594a2437072f5cd0712b6a934db58e"><td class="memItemLeft" align="right" valign="top"><a id="acc594a2437072f5cd0712b6a934db58e" name="acc594a2437072f5cd0712b6a934db58e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isKeyPressed</b> (<a class="el" href="classezgame_1_1_keyboard.html#aad095407733e3c5b856770504f988a85">Key</a> key) const</td></tr>
-<tr class="memdesc:acc594a2437072f5cd0712b6a934db58e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne vrai si la touche demandée est appuyée sinon retourne faux. <br /></td></tr>
+<tr class="memitem:acc594a2437072f5cd0712b6a934db58e" id="r_acc594a2437072f5cd0712b6a934db58e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classezgame_1_1_keyboard.html#acc594a2437072f5cd0712b6a934db58e">isKeyPressed</a> (<a class="el" href="classezgame_1_1_keyboard.html#aad095407733e3c5b856770504f988a85">Key</a> key) const</td></tr>
+<tr class="memdesc:acc594a2437072f5cd0712b6a934db58e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur retournant si une touche est appuyée.  <br /></td></tr>
 <tr class="separator:acc594a2437072f5cd0712b6a934db58e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
@@ -238,6 +245,12 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Application</b></td>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Classe permettant de connaître l'état du clavier. </p>
+<p><a class="anchor" id="n_key_rollover"></a> <b>Attention</b> au problème de « <em>n-key rollover</em> »</p>
+<p>Le terme « <em>n-key rollover</em> » désigne la capacité d'un clavier à enregistrer simultanément un certain nombre de touches pressées. Ce concept est crucial pour garantir que toutes les entrées sont correctement transmises au système informatique.</p>
+<p>Le problème n'est pas de nature logiciel mais plutôt lié aux capacités matérielles du clavier présent. Un clavier haut de gamme peut offrir la capacité d'enregistrer l'appuie simultanée de toutes les touches du clavier. Un clavier moins haut de gamme peut être limité au nombre de touches pouvant être détectée en même temps. Cette limitation se manifeste autant par certaines combinaisons de touches spécifiques que par le nombre de touches.</p>
+<p>Lorsque le matériel ne possède pas une capacité de « <em>n-key rollover</em> » adéquate, il peut y avoir des omissions ou des confusions dans la transmission des signaux de touches au système informatique. Cette situation peut rendre l'application impossible à correctement opérée si l'appui de touches simultanées est nécessaire.</p>
+<p>Il est essentiel de tester cette fonctionnalité pour assurer la fiabilité du clavier, surtout dans des contextes nécessitant des combinaisons de touches complexes.Les tests peuvent être effectués via des logiciels dédiés ou par des méthodes empiriques, où un utilisateur presse plusieurs touches simultanément pour évaluer la performance du clavier.</p>
+<p>Voir <a href="https://www.microsoft.com/applied-sciences/projects/anti-ghosting-demo" target="_blank">ce lien</a> pour faire un test manuel des possibilités du clavier concernant la situation du « <em>n-key rollover</em> » </p>
 </div><h2 class="groupheader">Documentation des énumérations membres</h2>
 <a id="aad095407733e3c5b856770504f988a85" name="aad095407733e3c5b856770504f988a85"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aad095407733e3c5b856770504f988a85">&#9670;&#160;</a></span>Key</h2>
@@ -465,6 +478,36 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>Application</b></td>
 <tr><td class="fieldname"><a id="aad095407733e3c5b856770504f988a85a105b296a83f9c105355403f3332af50f" name="aad095407733e3c5b856770504f988a85a105b296a83f9c105355403f3332af50f"></a>Pause&#160;</td><td class="fielddoc"><p>Pause. </p>
 </td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions membres</h2>
+<a id="acc594a2437072f5cd0712b6a934db58e" name="acc594a2437072f5cd0712b6a934db58e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc594a2437072f5cd0712b6a934db58e">&#9670;&#160;</a></span>isKeyPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ezgame::Keyboard::isKeyPressed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classezgame_1_1_keyboard.html#aad095407733e3c5b856770504f988a85">Key</a>&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur retournant si une touche est appuyée. </p>
+<p>Il est possible de connaître l'état du clavier une touche à la fois. Il suffit d'appeler cette fonction avec la touche désirée.</p>
+<p>Attention aux limitations matérielles. Voir le concept de <a class="el" href="classezgame_1_1_keyboard.html#n_key_rollover">« _n-key rollover_ »</a>.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>La touche dont il faut connaître l'état : appuyé ou non</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>L'état de la touche spécifiée : vrai si appuyé, sinon faux. </dd></dl>
 
 </div>
 </div>

@@ -74,10 +74,11 @@ class Player
 
 		void tic(const ezgame::Keyboard& keyboard, const float elapsedTime, const Arena& arena);
 
-
 		void draw(ezgame::Screen& screen);
 
 		void newMatch(bool hit, bool swap, Arena& arena, Dome& dome);
+
+		void newGame(Role role, Arena arena, Dome dome);
 
 		void addHit() ;
 

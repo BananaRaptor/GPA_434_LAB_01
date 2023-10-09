@@ -1,0 +1,89 @@
+1 - Arnaud Théberge-Mandeville 
+
+2 - Fonctionnalité
+	i - Arena 
+		i) 10
+		iii) J'ai divisé l'assignation et le calcul des positions des warp et de restricted dans des fonctions privées pour moins alourdir le code base
+
+	ii - Dôme 
+		A) 10
+		iii) Non je l'ai laissé vanille
+
+	iii - DirectionKeyMapping 
+		i) 10
+		iii) Non je l'ai laissé vanille
+
+	iv - DirectionKeyMapping 
+		i) 10
+		iii) Non je l'ai laissé vanille
+
+	v - Player 
+		i) 10
+		iii) J'ai ajouté 4 fonctions privées
+
+			\\ est appelé par tous les isColliding puisque toutes les entités sont des cercles la logique est partagée
+			bool isCollidingCircle(ezgame::Circle circle);
+
+			void swapRole();
+
+			\\ positionne les joueurs selon leurs rôles
+			void positionPlayer(Arena& arena, Dome& dome);
+			
+			\\ positionnes les prétendants selon les cercles autour du dôme
+			void positionContender(Arena& arena, Dome& dome);
+
+	vi - Modifier 
+		i) 10
+		iii)  Non je l'ai laissé vanille
+
+	vii - ScoreManager 
+		i) 10
+		iii)  Non je l'ai laissé vanille
+3) Discussions
+	a) 175 float
+    b)  
+        i   - Composition lorsque le player meurt, l'objet DirectionKeyMapping meurt. Avec une cardinalité de 1.  
+        ii  - Composition lorsque le GameEngine meurt, Arena meurt. Avec une cardinalité de 1.
+        iii - Dépendances, elles s'utilisent entre elles, mais leur vie n'est pas liée
+        iv  - Composition lorsque le modificateur meurt l'objet TEXT du modificateur meurt avec lui.
+        v   - Association 
+        vi  - Association
+    c) Les classes circles et TEXT sont toutes les deux des éléments graphiques possédant un vect2d, des couleurs et des tailles en float.
+        On pourrait créer une classe intermédaire (GraphicalElement) qui agréerait les données communes couleur, taille et position ensemble.
+
+	
+
+  
+
+4. 
+    a. Ce mot clé empêche l'objet de modifier ses propriétés lorsque cette fonction est appelée.
+        Pour les cas spécifiques mentionnée dans ezgame::Keyboard::isKeyPressed il sert à s'assurer que l'objet
+        ne se modifie pas. Il ne sert à rien de changer l'objet lorsqu'on souhaite seulement avoir un retour booléen.
+
+        Tandis qu’ Ezgame::Screen::draw lui sert justement a modifier l'objet écran pour y modifier les éléments graphiques.
+        La fonctionnalité serait impossible à implémenter si ce mot clé était ajouté.
+    
+    b. Ce mot-clé spécifie les accès aux propriétés et des fonctions de la classe.
+        De base ce dernier est privé si non spécifié ce qui signifie que seulement l'objet lui-même peut accéder à l'élément.
+        Si l'accès est public, tous les autres objets et fonctions peuvent utiliser les différents éléments.
+
+    c. Le compilateur va lancer une erreur. Il s'agit d'une relique de la compilation de struct en C qui était défini comme un type de variable custom.
+        On peut voir la classe similairement comme une variable devant être instancié et non statique.
+
+    d.
+        i   - Retourne vrai si mX et mY sont défini et non-nul
+        ii  - Retourne racine carrée de (mX ^2 + mY ^2)
+        iii - Retourne un float réprésentant la direction en radian avec atan(my/mx)
+        iv  - Prend un rayon et un angle et change la valeur de mX et mY selon mX = cos(angle) *r et mY = sin(angle) * r
+		v	- Prend un autre vecteur et effectue la soustraction des 2 vecteurs puis appelle length() du vecteur résultant;
+		vi  - Effectue return this.setPolar(this.orientation(),1);
+		vii - Effectue return this.setPolar(2 * M_PI * (ezgame::Random::real(0.0, 360.0) / 360),1);
+5.
+	a) Le fait d'avoir utilisé le paradigme orienté objet nous a permis de faciliter le développement de ce projet. Notamment dans le contexte d'un jeu avec des entités 
+		interagissant entre elles. Le paradigme est fait pour ce genre de projet. Si nous avions à l'effectuer de façon procédurale. Nous aurions eu un nombre faramineux de variable
+		ou de struct à gérer et aurais rendu le code difficile à lire. Le paradigme orienté objet rend le code imagé par sa syntaxe utilisant des concepts plus haut niveau (des joueurs, des dômes
+		et de modificateurs) dans le gameEngine et masquant la complexité dans les classes en elle même.
+
+	b)  Oui, l'exemple le plus flagrant se trouve dans la classe player. En effet, nous utilisons des conditions pour distinguer entre les 2 pour effectuer les comportements des 2 joueurs. Il serait
+		aisé de créer une classe abstraite Player qui contient des fonctions à implémenter puis hériter dans Pretender et Defender ses fonctions, mais les implémenter différemment. En réalité, chaque
+		switch case sur des enums du programme aurait été des opportunités d'effectuer du polymorphisme.

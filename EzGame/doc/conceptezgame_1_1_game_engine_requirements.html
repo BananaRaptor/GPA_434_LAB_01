@@ -12,6 +12,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -20,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="EzGameLogoMedium.png"/></td>
   <td id="projectalign">
    <div id="projectname">EzGame
    </div>
@@ -78,7 +86,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Ce concept vérifie qu'une classe satisfait aux exigences nécessaires afin de servir de moteur de jeu pour la librairie <code>EzGame</code>.  
+<p>Ce concept vérifie qu'une classe satisfait aux exigences nécessaires afin de servir de moteur de jeu pour la bibliothèque <code>EzGame</code>.  
 <a href="conceptezgame_1_1_game_engine_requirements.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_application_8h_source.html">Application.h</a>&gt;</code></p>
@@ -87,13 +95,14 @@ $(function() {
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptezgame_1_1_game_engine_requirements.html">ezgame::GameEngineRequirements</a> = </div>
 <div class="ttc" id="aconceptezgame_1_1_game_engine_requirements_html"><div class="ttname"><a href="conceptezgame_1_1_game_engine_requirements.html">ezgame::GameEngineRequirements</a></div><div class="ttdoc">Ce concept vérifie qu'une classe satisfait aux exigences nécessaires afin de servir de moteur de jeu ...</div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Ce concept vérifie qu'une classe satisfait aux exigences nécessaires afin de servir de moteur de jeu pour la librairie <code>EzGame</code>. </p>
+<div class="textblock"><p>Ce concept vérifie qu'une classe satisfait aux exigences nécessaires afin de servir de moteur de jeu pour la bibliothèque <code>EzGame</code>. </p>
 <dl class="tparams"><dt>Paramètres du template</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>Le type que le concept évalue.</td></tr>
   </table>
   </dd>
 </dl>
+<p>La fonction <a class="el" href="classezgame_1_1_application.html#a9d3eff63e01513ea4b63924d9adb2eb6" title="Exécute l&#39;application en utilisant le moteur donné en argument template.">ezgame::Application::run</a> démarre la boucle principale et exécute le moteur de jeu. Afin de rester générique et de pouvoir exécuter n'importe quel moteur de jeu, on passe à cette fonction la classe en tant que paramètre <code>template</code>. Ce paramètre doit toutefois correspondre à l'interface de programmation attendue et ce concept détermine les exigences minimum attendues.</p>
 <p>Les exigences sont que la classe T possède :</p><ul>
 <li>les opérations en lecture seule suivantes :<ul>
 <li><code>float width() const</code> : fonction retournant la taille horizontale de la surface graphique.</li>
@@ -102,7 +111,7 @@ $(function() {
 <li><code>string iconFileName() const</code> : fonction retournant le nom du fichier de l'icône de la fenêtre graphique (dossier relatif et nom de fichier complet).</li>
 </ul>
 </li>
-<li>les opérations en lecture/écriture suivantes :<ul>
+<li>les opérations en lecture et écriture suivantes :<ul>
 <li><code>bool processEvents(Keyboard const&amp; keyboard, Timer const&amp; timer)</code> : fonction servant faire le traitement de chaque pas de simulation. Lorsque la fonction retourne faux, l'application termine immédiatement.</li>
 <li><code>void processDisplay(Screen &amp; screen)</code> : fonction servant à redessiner la fenêtre graphique à chaque pas de simulation.</li>
 </ul>
@@ -110,8 +119,8 @@ $(function() {
 </ul>
 <p>Pour être considéré compatibles, il est essentiel que les critères suivants soient <b>strictement identiques</b> pour chaque fonction:</p><ul>
 <li>le nom</li>
-<li>le type de retour</li>
-<li>la signature (incluant les <code>&amp;</code> et <code>const</code>) <em>ne pas oublié que la mention de fin de fonction <code>const</code> fait partie de la signature</em> </li>
+<li>la signature (incluant les <code>&amp;</code> et <code>const</code> - ne pas oublié que la mention <code>const</code> de fin de fonction fait partie de la signature)</li>
+<li>le type de retour </li>
 </ul>
 </div></div><!-- contents -->
 <!-- start footer part -->
